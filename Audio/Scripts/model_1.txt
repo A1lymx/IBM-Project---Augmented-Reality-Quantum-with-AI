@@ -1,0 +1,5 @@
+Welcome to the first chapter on quanta. This exciting field uses quantum mechanics principles to address challenges beyond traditional computers' scope. 
+
+IBM Quantum is leading the way in making quantum computing accessible to developers worldwide. Our team is constantly pushing the boundaries with more powerful quantum processors and innovations in software, aiming to harness the true power of quantum computing to make significant impacts. 
+
+These machines are very different from the classical computers that have been around for more than half a century.

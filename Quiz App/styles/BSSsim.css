@@ -1,0 +1,52 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+  }
+  
+  .topnav {
+    background-color: #662d8bbe;
+    overflow: hidden;
+  }
+  
+  /* Style the links inside the navigation bar */
+  .topnav a {
+    float: left;
+    color: #ffffff;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+  }
+  
+  /* Change the color of links on hover */
+  .topnav a:hover {
+    background-color: #862e97c9;
+    color: black;
+  }
+  
+  /* Add a color to the active/current link */
+  .topnav a.active {
+    background-color: #692dca;
+    color: white;
+  }
+  body{
+    background: #001e4d;
+    background-image: url("../assets/backGIF.gif");
+    background-size: fit
+  }
+  .app{
+    background: #c4a6f5be;
+    width: 95%;
+    margin: 70px auto 0;
+    border-radius: 10px;
+    padding: 20px;
+  }
+  .app h1{
+    font-size: 25px;
+    color: #000000;
+    font-weight: 600;
+    border-bottom: 1px solid #333;
+    padding-bottom: 30px;
+  }  

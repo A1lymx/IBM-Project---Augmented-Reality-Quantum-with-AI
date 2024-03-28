@@ -1,0 +1,11 @@
+@use '@carbon/react/scss/colors';
+
+// Used modifications from referenced tutorial
+
+.cds--header__global .cds--popover-content {
+    background-color: colors.$gray-20;
+}
+
+.cds--header__global .cds--popover-caret {
+    background-color: colors.$gray-20;
+}

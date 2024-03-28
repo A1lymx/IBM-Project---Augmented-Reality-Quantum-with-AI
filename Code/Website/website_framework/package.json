@@ -1,0 +1,30 @@
+{
+  "name": "website_framework",
+  "version": "0.1.0",
+  "private": false,
+  "html.validate.scripts": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build && touch ./out/.nojekyll",
+    "start": "next start",
+    "lint": "next lint",
+    "convert": "pwd; sass ./src/app/globals.scss ./src/app/globals.css"
+  },
+  "dependencies": {
+    "@carbon/icons-react": "^11.37.0",
+    "@carbon/react": "1.52.0",
+    "next": "14.1.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "sass": "1.63.6"
+  },
+  "devDependencies": {
+    "eslint": "^8",
+    "eslint-config-next": "14.1.0"
+  },
+  "exports": {
+    ".": {
+      "sass": "./node_modules/@carbon/react"
+    }
+  }
+}

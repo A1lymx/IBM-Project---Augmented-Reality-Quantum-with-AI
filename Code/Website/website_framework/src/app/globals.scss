@@ -1,0 +1,18 @@
+@use '@carbon/react';
+@use '../components/PageHeader/page_header';
+@use './home/landing-page';
+@use './quantum_quiz/quantum_quiz';
+@use './references/references';
+
+// Used modifications given in IBM Design React Tutorial (all content below)
+@media (min-width: 42rem) {
+  .cds--grid--no-gutter {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+
+.cds--content {
+  margin-top: 3rem;
+  background: var(--cds-background);
+}

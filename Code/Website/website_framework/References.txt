@@ -1,0 +1,305 @@
+These are all the sites I (Millicent Riordan) consulted when building the website framework and integrating all the components:
+
+- https://developer.mozilla.org/en-US/docs/Web/API/Headers/Headers
+
+- https://web-chat.global.assistant.watson.cloud.ibm.com/docs.html?to=api-configuration
+
+- https://developer.ibm.com/tutorials/embed-watson-assistant-in-website/
+
+- https://stackoverflow.com/questions/70241204/error-unexpected-token-did-you-mean-or-rbrace-jsx-element
+
+- https://stackoverflow.com/questions/70241204/error-unexpected-token-did-you-mean-or-rbrace-jsx-element
+
+- https://www.w3schools.com/tags/att_script_src.asp
+
+- https://nextjs.org/docs/pages/building-your-application/configuring/custom-server
+
+- https://nextjs.org/docs/app/api-reference/create-next-app
+
+- https://cloud.ibm.com/docs/watson-assistant?topic=watson-assistant-web-chat-architecture
+
+- https://stackoverflow.com/questions/55165852/next-js-implement-external-js-with-script
+
+- https://carbondesignsystem.com/developing/react-tutorial/step-1
+
+- https://www.w3schools.com/react/react_es6_array_methods.asp
+
+- https://react.dev/learn/tutorial-tic-tac-toe
+
+- https://nextjs.org/learn-pages-router/basics/create-nextjs-app/setup
+
+- https://nextjs.org/docs/pages/api-reference/create-next-app
+
+- https://nextjs.org/learn-pages-router/basics/create-nextjs-app/setup
+
+- https://www.w3schools.com/tags/tag_iframe.ASP
+
+- https://developer.mozilla.org/en-US/docs/Web/API/MediaDevices/getUserMedia
+
+- https://forum.unity.com/threads/deploying-ar-to-webgl.637384/
+
+- https://developers.google.com/ar/develop/webxr
+
+- https://docs.unity3d.com/Manual/webgl-browser-access-device.html
+
+- https://www.youtube.com/watch?v=A5iUcZ9TAN8
+
+- https://forum.unity.com/threads/ar-foundation-and-webgl-i-know-its-not-support-just-read.626374/
+
+- https://medium.com/@jiyasharma192004/setting-up-a-unity-project-for-webxr-7821b5b9f8a7
+
+- https://medium.com/samsung-internet-dev/using-webxr-in-html-iframes-629c248ff96d
+
+- https://www.youtube.com/watch?app=desktop&v=QYd2XPL0WW0
+
+- https://engine.needle.tools/docs/faq.html
+
+- https://engine.needle.tools/docs/getting-started
+
+- https://medium.com/@jiyasharma192004/needle-engine-46fb25b125d0
+
+- https://classic.yarnpkg.com/en/package/@needle-tools/engine
+
+- https://engine.needle.tools/docs/xr.html
+
+- https://docs.unity3d.com/Manual/AudioMixerNativeAudioPlugin.html
+
+- https://docs.unity3d.com/Manual/class-AudioSource.html
+
+- https://www.youtube.com/watch?v=KI29qb0xcsM
+
+- https://forum.unity.com/threads/how-to-get-an-access-to-a-device-camera-unity-webgl.1325361/
+
+- https://docs.unity3d.com/Manual/webgl-browser-access-device.html
+
+- https://docs.unity3d.com/ScriptReference/Application.RequestUserAuthorization.html
+
+- https://www.youtube.com/watch?v=c6NXkZWXHnc
+
+- https://vercel.com/guides/access-nextjs-localhost-https-certificate-self-signed
+
+- https://docs.unity3d.com/Packages/com.unity.xr.arfoundation@5.1/api/UnityEngine.XR.ARFoundation.ARInputManager.html
+
+- https://discussions.unity.com/t/application-requestuserauthorization-does-not-prompt-for-microphone-access-permission-in-ios/266576/2
+
+- https://docs.unity3d.com/Packages/com.unity.xr.arfoundation@5.1/manual/features/session.html
+
+- https://discussions.unity.com/t/ios-missing-info-plist-key-this-app-attempts-to-access-privacy-sensitive-data-without-a-usage-description-nscamerausagedescription-key/181082
+
+- https://forum.unity.com/threads/how-to-embed-a-unity-game-into-a-webpage.86356/
+
+- https://docs.unity3d.com/530/Documentation/Manual/HTMLcodetoloadUnityWebPlayercontent.html
+
+- https://docs.unity3d.com/Manual/webgl-deploying.html
+
+- https://learn.unity.com/tutorial/creating-and-publishing-webgl-builds
+
+- https://discussions.unity.com/t/embed-webgl-in-html-page/139559
+
+- https://stackoverflow.com/questions/31184505/sandboxing-iframe-and-allow-same-origin
+
+- https://www.ibm.com/docs/en/baw/19.x?topic=folders-adding-references
+
+- https://www.w3schools.com/html/html_lists.asp
+
+- https://docs.unity3d.com/Manual/AudioFiles.html
+
+- https://docs.unity3d.com/Manual/webgl-building.html
+
+- https://github.com/vercel/next.js/issues/47394
+
+- https://forum.unity.com/threads/webgl-input-not-working-when-in-an-iframe-e-g-newgrounds-fixed.343119/
+
+- https://stackoverflow.com/questions/75259654/iframe-into-nextjs
+
+- https://stackoverflow.com/questions/42393063/load-local-html-on-iframe
+
+- https://docs.unity3d.com/560/Documentation/Manual/webgl-templates.html
+
+- https://www.w3schools.com/tags/att_iframe_src.asp
+
+- https://www.w3schools.com/tags/tag_iframe.ASP
+
+- https://forum.unity.com/threads/need-some-help-embedding-webgl-build-s-in-webpage.308678/
+
+- https://www.w3schools.com/howto/howto_css_responsive_iframes.asp
+
+- https://stackoverflow.com/questions/7439503/how-do-i-make-an-iframe-fit-the-entire-screen-without-specifying-dimensions
+
+- https://forum.unity.com/threads/brotli-compression-may-not-be-supported-over-http-connections.1212339/
+
+- https://stackoverflow.com/questions/72453065/unable-to-parse-build-build-framework-js-br
+
+- https://docs.unity3d.com/Manual/class-AudioSource.html
+
+- https://forum.unity.com/threads/solved-has-no-meta-file-but-its-in-an-immutable-folder-the-asset-will-be-ignored.1444663/
+
+- https://learn.unity.com/tutorial/creating-and-publishing-webgl-builds#
+
+- https://nextjs.org/docs/app/api-reference/file-conventions/not-found
+
+- https://nextjs.org/docs/pages/api-reference/components/script
+
+- https://cloud.ibm.com/docs/assistant?topic=assistant-deploy-web-chat
+
+- https://legacy.reactjs.org/docs/handling-events.html
+
+- https://stackoverflow.com/questions/69751488/nextjs-call-js-function-when-onclick
+
+- https://forum.unity.com/threads/tls-allocator-alloc_temp_tls-problem-when-selecting-my-terrain.1197934/ 
+
+- https://medium.com/@jiyasharma192004/needle-engine-46fb25b125d0
+
+- https://medium.com/@codeidoscope/load-testing-and-improving-the-performance-of-my-http-server-ab6ff70ced60
+
+- https://www.youtube.com/watch?v=uXFbi9Nqzc8
+
+- https://docs.unity3d.com/Manual/script-Serialization.html
+
+- https://nextjs.org/docs/pages/building-your-application/deploying/static-exports
+
+- https://sass-lang.com/documentation/syntax/parsing/
+
+- https://nextjs.org/docs/app/building-your-application/configuring/eslint#core-web-vitals
+
+- https://web.dev/articles/vitals
+
+- https://nextjs.org/docs/app/building-your-application/configuring/eslint
+
+- https://docs.github.com/en/repositories/working-with-files/managing-large-files/about-large-files-on-github
+
+- https://medium.com/frontendweb/how-to-deploy-a-nextjs-app-to-github-pages-1de4f6ed762e
+
+- https://www.youtube.com/watch?v=mJuz45RXeXY
+
+- https://nextjs.org/docs/messages/next-config-error
+
+- https://stackoverflow.com/questions/49056000/all-of-my-json-files-have-problems-loading-reference-schema-from-schemastore-az
+
+- https://stackoverflow.com/questions/63975194/referenceerror-module-is-not-defined
+
+- https://nextjs.org/docs/app/building-your-application/configuring/src-directory
+
+- https://www.freecodecamp.org/news/how-to-deploy-next-js-app-to-github-pages/
+
+- https://nextjs.org/docs/pages/api-reference/components/link
+
+- https://blog.logrocket.com/deploying-react-apps-github-pages/
+
+- https://www.reddit.com/r/github/comments/105xzh6/css_not_being_applied_in_github_pages_deployment/
+
+- https://code.visualstudio.com/docs/languages/css
+
+- https://forum.unity.com/threads/serialization-and-deserialization-issues.1252017/
+
+- https://forum.unity.com/threads/objects-being-deserialized-is-from-a-more-recent-version-of-unity-console-error.1441276/
+
+- https://needle.tools/
+
+- https://engine.needle.tools/docs/scripting-examples.html#use-nested-objects-and-serialization
+
+- https://forum.unity.com/threads/problem-serializing-a-list-of-a-serializable-class.225102/
+
+- https://engine.needle.tools/docs/getting-started/for-unity-developers.html#gameobjects-and-the-scene
+
+- https://nextjs.org/docs/app/building-your-application/styling/sass
+
+- https://sass-lang.com/guide/#:~:text=Once%20Sass%20is%20installed%2C%20you,that%20file%20to%20output.css%20.
+
+- https://stackoverflow.com/questions/70242144/convert-scss-to-css-automatically-on-live-server
+
+- https://www.youtube.com/watch?v=iWhUynDN8i0
+
+- https://stackoverflow.com/questions/71830681/sass-loader-requirenode-sass-but-i-installed-sass
+
+- https://stackoverflow.com/questions/13766178/scss-file-not-compiling-anymore
+
+- https://stackoverflow.com/questions/51127038/sass-error-cant-find-stylesheet-to-import
+
+- https://sass-lang.com/documentation/at-rules/use/#pkg-ur-ls
+
+- https://www.youtube.com/watch?v=o4cECvhrBo8
+
+- https://www.jetbrains.com/help/phpstorm/transpiling-sass-less-and-scss-to-css.html
+
+- https://stackoverflow.com/questions/67551736/how-to-set-up-scss-in-webstorm
+
+- https://medium.com/anna-coding/how-to-import-scss-file-from-node-modules-abb09b6946b3#:~:text=To%20import%20scss%20file%20from%20node_modues%2C%20you%20need%20to%20config,and%20config%20the%20path%20there.
+
+- https://stackoverflow.com/questions/74072541/use-in-sass-unable-to-resolve-path-of-css-from-node-modules
+
+- https://github.com/sass/sass/blob/main/spec/embedded-protocol.md
+
+- https://stackoverflow.com/questions/40366008/how-do-i-load-a-node-module-as-if-the-current-module-were-located-somewhere-else
+
+- https://stackoverflow.com/questions/59843499/why-does-webstorm-throw-cant-find-stylesheet-to-import-when-using-the-sass-fi
+
+- https://stackoverflow.com/questions/21987225/webstorm-cannot-resolve-directory
+
+- https://stackoverflow.com/questions/64623572/webstorm-scss-file-watcher-error-invalid-executable
+
+- https://intellij-support.jetbrains.com/hc/en-us/community/posts/4409363417490-FileWatcher-lost-track-of-project-files-SCSS
+
+- https://stackoverflow.com/questions/35741847/cannot-resolve-symbol-when-using-es6-import-syntax
+
+- https://teamtreehouse.com/community/what-does-it-mean-by-cant-resolve-symbol
+
+- https://stackoverflow.com/questions/71763614/why-is-my-react-import-function-not-working
+
+- https://github.com/primer/react/issues/1010
+
+- https://www.jetbrains.com/help/webstorm/react.html
+
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Default_parameters
+
+- https://github.com/recharts/recharts/issues/3615
+
+- https://stackoverflow.com/questions/67288262/how-can-i-fix-the-sass-on-my-github-pages-site
+
+- https://stackoverflow.com/questions/53932787/webstorm-css-cannot-resolve-custom-property
+
+- https://stackoverflow.com/questions/54436021/nextjs-public-folder
+
+- https://www.w3schools.com/react/react_css.asp
+
+- https://www.youtube.com/watch?v=mJuz45RXeXY&t=623s
+
+- https://stackoverflow.com/questions/57715058/get-css-from-different-domain-blocked-by-cors-policy-no-access-control-allow-o
+
+- https://nextjs.org/docs/app/building-your-application/styling/css-modules#global-styles
+
+- https://www.youtube.com/watch?v=qKwnlTVAGnA
+
+- https://nextjs.org/docs/app/building-your-application/styling/css-modules
+
+- https://github.com/orgs/community/discussions/23058
+
+- https://stackoverflow.com/questions/61450307/js-and-css-not-loading-when-hosting-next-application-on-github-pages
+
+- https://stackoverflow.com/questions/6397780/names-starting-with-underscore-shows-errors-page-doesnot-exists-for-gh-pages-bra
+
+- https://stackoverflow.com/questions/66084031/next-js-error-getting-404-when-fetching-js-resources-after-refresh
+
+- https://github.com/vercel/next.js/issues/5641
+
+- https://nextjs.org/docs/app/building-your-application/routing/route-handlers
+
+- https://github.com/tschaub/gh-pages/issues/285
+
+- https://nextjs.org/docs/pages/building-your-application/configuring/environment-variables
+
+- https://medium.com/samsung-internet-dev/using-webxr-in-html-iframes-629c248ff96d
+
+- https://vitejs.dev/guide/build.html
+
+- https://gist.github.com/SKempin/b7857a6ff6bddb05717cc17a44091202
+
+- https://forum.unity.com/threads/scene-view-requires-a-click-to-refocus-causing-issues-with-navigation.824637/
+
+- https://docs.unity3d.com/Manual/AudioFiles.html
+
+- https://www.youtube.com/watch?v=_UI3HS_H-Xc
+
+- https://www.youtube.com/watch?v=3dB-d1Jo_Mk
+
+- https://www.youtube.com/watch?app=desktop&v=QYd2XPL0WW0

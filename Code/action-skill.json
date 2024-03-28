@@ -1,0 +1,5731 @@
+{
+  "name": "ACHATBOT",
+  "type": "action",
+  "counts": {
+    "actions": 61,
+    "intents": 58,
+    "entities": 14,
+    "data_types": 0,
+    "collections": 0,
+    "global_variables": 0
+  },
+  "status": "Available",
+  "language": "en",
+  "skill_id": "953b86f2-50b1-467e-aec5-8a5a6252d373",
+  "workspace": {
+    "actions": [
+      {
+        "steps": [
+          {
+            "step": "digression_failure",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text": "Sorry I couldn't confirm if you wanted to return to previous topic, let me connect to an agent."
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "connect_to_agent",
+              "response": {
+                "transfer_info": {
+                  "target": {}
+                },
+                "agent_available": {
+                  "message": "Let's send you to an available agent."
+                },
+                "agent_unavailable": {
+                  "message": "There are no agents available at this time. When one becomes available, we'll connect you."
+                },
+                "message_to_human_agent": ""
+              }
+            },
+            "variable": "digression_failure",
+            "condition": {
+              "eq": [
+                {
+                  "system_variable": "fallback_reason"
+                },
+                {
+                  "scalar": "Failed to confirm topic return"
+                }
+              ]
+            },
+            "next_step": "step_001"
+          },
+          {
+            "step": "step_001",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text": "I'm afraid I don't understand. I can connect you to an agent."
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "connect_to_agent",
+              "response": {
+                "transfer_info": {
+                  "target": {}
+                },
+                "agent_available": {
+                  "message": "Let's send you to an available agent."
+                },
+                "agent_unavailable": {
+                  "message": "There are no agents available at this time. When one becomes available, we'll connect you."
+                },
+                "message_to_human_agent": ""
+              }
+            },
+            "variable": "step_001",
+            "condition": {
+              "eq": [
+                {
+                  "system_variable": "fallback_reason"
+                },
+                {
+                  "scalar": "Step validation failed"
+                }
+              ]
+            },
+            "next_step": "step_002"
+          },
+          {
+            "step": "step_002",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text": "Sorry I couldn't assist you. I will connect you to an agent right away."
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "connect_to_agent",
+              "response": {
+                "transfer_info": {
+                  "target": {}
+                },
+                "agent_available": {
+                  "message": "Let's send you to an available agent."
+                },
+                "agent_unavailable": {
+                  "message": "There are no agents available at this time. When one becomes available, we'll connect you."
+                },
+                "message_to_human_agent": ""
+              }
+            },
+            "variable": "step_002",
+            "condition": {
+              "eq": [
+                {
+                  "system_variable": "fallback_reason"
+                },
+                {
+                  "scalar": "Agent requested"
+                }
+              ]
+            },
+            "next_step": "step_003"
+          },
+          {
+            "step": "step_003",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text": "I am afraid I do not understand what you are asking, let me connect you to an agent."
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "connect_to_agent",
+              "response": {
+                "transfer_info": {
+                  "target": {}
+                },
+                "agent_available": {
+                  "message": "Let's send you to an available agent."
+                },
+                "agent_unavailable": {
+                  "message": "There are no agents available at this time. When one becomes available, we'll connect you."
+                },
+                "message_to_human_agent": ""
+              }
+            },
+            "variable": "step_003",
+            "condition": {
+              "eq": [
+                {
+                  "system_variable": "fallback_reason"
+                },
+                {
+                  "scalar": "No action matches"
+                }
+              ]
+            },
+            "next_step": "step_004"
+          },
+          {
+            "step": "step_004",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text": "It seems this conversation would be best managed by a human agent. Let me connect you to one of our agents."
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "connect_to_agent",
+              "response": {
+                "transfer_info": {
+                  "target": {}
+                },
+                "agent_available": {
+                  "message": "Let's send you to an available agent."
+                },
+                "agent_unavailable": {
+                  "message": "There are no agents available at this time. When one becomes available, we'll connect you."
+                },
+                "message_to_human_agent": ""
+              }
+            },
+            "variable": "step_004",
+            "condition": {
+              "eq": [
+                {
+                  "system_variable": "fallback_reason"
+                },
+                {
+                  "scalar": "Danger word detected"
+                }
+              ]
+            },
+            "next_step": "step_005"
+          },
+          {
+            "step": "step_005",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text": "It seems this conversation would be best managed by a human agent. Let me connect you to one of our agents."
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "connect_to_agent",
+              "response": {
+                "transfer_info": {
+                  "target": {}
+                },
+                "agent_available": {
+                  "message": "Let's send you to an available agent."
+                },
+                "agent_unavailable": {
+                  "message": "There are no agents available at this time. When one becomes available, we'll connect you."
+                },
+                "message_to_human_agent": ""
+              }
+            },
+            "variable": "step_005",
+            "condition": {
+              "eq": [
+                {
+                  "system_variable": "fallback_reason"
+                },
+                {
+                  "scalar": "Profanity detected"
+                }
+              ]
+            }
+          }
+        ],
+        "title": "Fallback",
+        "action": "fallback",
+        "boosts": [],
+        "handlers": [],
+        "condition": {
+          "intent": "fallback_connect_to_agent"
+        },
+        "variables": [
+          {
+            "title": "Topic return failed",
+            "variable": "digression_failure",
+            "data_type": "any"
+          },
+          {
+            "title": "I'm afraid I don't understand. I can connect you to an agent.",
+            "variable": "step_001",
+            "data_type": "any"
+          },
+          {
+            "title": "Sorry I couldn't assist you. I will connect you to an agent righ",
+            "variable": "step_002",
+            "data_type": "any"
+          },
+          {
+            "title": "I am afraid I do not understand what you are asking, let me conn",
+            "variable": "step_003",
+            "data_type": "any"
+          },
+          {
+            "title": "It seems this conversation would be best managed",
+            "variable": "step_004",
+            "data_type": "any"
+          },
+          {
+            "title": "Profanity - It seems this conversation",
+            "variable": "step_005",
+            "data_type": "any"
+          }
+        ],
+        "next_action": "run_always",
+        "disambiguation_opt_out": true
+      },
+      {
+        "steps": [
+          {
+            "step": "danger_word_detected",
+            "title": "Connect to agent",
+            "handlers": [],
+            "resolver": {
+              "type": "fallback"
+            },
+            "variable": "danger_word_detected_variable",
+            "condition": {
+              "entity": "danger_words"
+            },
+            "next_step": "profanity_detected"
+          },
+          {
+            "step": "profanity_detected",
+            "title": "Show warning",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "Please use appropriate language when interacting with the assistant."
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [
+              {
+                "type": "max_hits",
+                "handler": "max_hits_handler",
+                "resolver": {
+                  "type": "fallback"
+                }
+              }
+            ],
+            "max_hits": 2,
+            "resolver": {
+              "type": "end_action"
+            },
+            "variable": "profanity_detected_variable",
+            "condition": {
+              "entity": "profane_words"
+            }
+          }
+        ],
+        "title": "Trigger word detected",
+        "action": "run_always",
+        "boosts": [],
+        "handlers": [],
+        "variables": [
+          {
+            "title": "Profanity detected",
+            "variable": "danger_word_detected_variable",
+            "data_type": "any"
+          },
+          {
+            "title": "Profane word detected",
+            "variable": "profanity_detected_variable",
+            "data_type": "any"
+          }
+        ],
+        "next_action": "anything_else"
+      },
+      {
+        "steps": [
+          {
+            "step": "step_001",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text": "I'm afraid I don't understand. Please rephrase your question."
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "end_action"
+            },
+            "variable": "step_001",
+            "condition": {
+              "lte": [
+                {
+                  "system_variable": "no_action_matches_count"
+                },
+                {
+                  "scalar": 3
+                }
+              ]
+            },
+            "next_step": "step_002"
+          },
+          {
+            "step": "step_002",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text": ""
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "invoke_another_action_and_end",
+              "invoke_action": {
+                "action": "fallback",
+                "policy": "default",
+                "parameters": null,
+                "result_variable": "step_002_result_1"
+              }
+            },
+            "variable": "step_002",
+            "condition": {
+              "gt": [
+                {
+                  "system_variable": "no_action_matches_count"
+                },
+                {
+                  "scalar": 3
+                }
+              ]
+            }
+          }
+        ],
+        "title": "No action matches",
+        "action": "anything_else",
+        "boosts": [],
+        "handlers": [],
+        "condition": {
+          "expression": "anything_else"
+        },
+        "variables": [
+          {
+            "title": "I am afraid I do not understand what you are asking, please re-p",
+            "variable": "step_001",
+            "data_type": "any"
+          },
+          {
+            "variable": "step_002",
+            "data_type": "any"
+          },
+          {
+            "variable": "step_002_result_1",
+            "data_type": "any"
+          }
+        ],
+        "disambiguation_opt_out": true
+      },
+      {
+        "steps": [
+          {
+            "step": "step_481",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "I can do a whole lot of things, from answering your most common questions about quantum computing.\n\n<br />\n\n\n\nTry asking me a question and see!"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "end_action"
+            },
+            "variable": "step_481"
+          }
+        ],
+        "title": "What can you do?",
+        "action": "action_3898",
+        "boosts": [],
+        "handlers": [],
+        "condition": {
+          "intent": "action_3898_intent_14987"
+        },
+        "variables": [
+          {
+            "title": "I can do a whole lot of things, from answering your most common ",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_481",
+            "data_type": "any"
+          }
+        ],
+        "next_action": "action_47712",
+        "topic_switch": {
+          "allowed_from": true,
+          "allowed_into": true
+        },
+        "disambiguation_opt_out": false
+      },
+      {
+        "steps": [
+          {
+            "step": "step_001",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text": "Welcome, how can I assist you?"
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "end_action"
+            },
+            "variable": "step_001"
+          }
+        ],
+        "title": "Greet customer",
+        "action": "welcome",
+        "boosts": [],
+        "handlers": [],
+        "condition": {
+          "expression": "welcome"
+        },
+        "variables": [
+          {
+            "variable": "step_001",
+            "data_type": "any"
+          }
+        ],
+        "next_action": "action_18373",
+        "disambiguation_opt_out": true
+      },
+      {
+        "steps": [
+          {
+            "step": "step_465",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "No problem! Enjoy exploring our product, and feel free to come back with any questions you might have."
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "context": {
+              "variables": []
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "end_action"
+            },
+            "variable": "step_465"
+          }
+        ],
+        "title": "Just looking!",
+        "action": "action_47712",
+        "boosts": [],
+        "handlers": [],
+        "condition": {
+          "intent": "action_47712_intent_34594"
+        },
+        "variables": [
+          {
+            "variable": "step_465",
+            "data_type": "any"
+          }
+        ],
+        "next_action": "action_36338",
+        "topic_switch": {
+          "allowed_from": true,
+          "allowed_into": true
+        },
+        "disambiguation_opt_out": false
+      },
+      {
+        "steps": [
+          {
+            "step": "step_294",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "You're welcome! Let me know if I can help with anything else."
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "end_action"
+            },
+            "variable": "step_294"
+          }
+        ],
+        "title": "Thank you!",
+        "action": "action_36338",
+        "boosts": [],
+        "handlers": [],
+        "condition": {
+          "intent": "action_36338_intent_10557"
+        },
+        "variables": [
+          {
+            "title": "You're welcome! Let me know if I can help with anything else.",
+            "variable": "step_294",
+            "data_type": "any"
+          }
+        ],
+        "next_action": "fallback",
+        "topic_switch": {
+          "allowed_from": true,
+          "allowed_into": true
+        },
+        "disambiguation_opt_out": false
+      },
+      {
+        "steps": [
+          {
+            "step": "step_590",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "Alice and her three friends, Bob, Charlie, and Dahlia, are lined up on podiums with their hair randomly colored orange or indigo. Each person can see only the hair color of those in front of them and must identify their own hair color using a single-word answer: orange or indigo."
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "end_action"
+            },
+            "variable": "step_590"
+          }
+        ],
+        "title": "What is the setup for The Four Hair Color Enigma?",
+        "action": "action_22021",
+        "boosts": [],
+        "handlers": [],
+        "condition": {
+          "intent": "action_22021_intent_34249"
+        },
+        "variables": [
+          {
+            "title": "Alice and her three friends, Bob, Charlie, and Dahlia, are lined",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_590",
+            "data_type": "any"
+          }
+        ],
+        "launch_mode": "learning",
+        "next_action": "action_25015",
+        "topic_switch": {
+          "allowed_from": true,
+          "allowed_into": true,
+          "never_return": false
+        },
+        "disambiguation_opt_out": false
+      },
+      {
+        "steps": [
+          {
+            "step": "step_567",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "It's a riddle where you face two doors with treasures behind one. There are two guardians, one always lies and the other always tells the truth, but you don't know which is which. You must figure out which door has the treasure by asking a single question."
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "end_action"
+            },
+            "variable": "step_567"
+          }
+        ],
+        "title": "What is the Treasure Door Enigma?",
+        "action": "action_9704",
+        "boosts": [],
+        "handlers": [],
+        "condition": {
+          "intent": "action_9704_intent_3491"
+        },
+        "variables": [
+          {
+            "title": "It's a riddle where you face two doors with treasures behind one",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_567",
+            "data_type": "any"
+          }
+        ],
+        "launch_mode": "learning",
+        "next_action": "action_21080",
+        "topic_switch": {
+          "allowed_from": true,
+          "allowed_into": true,
+          "never_return": false
+        },
+        "disambiguation_opt_out": false
+      },
+      {
+        "steps": [
+          {
+            "step": "step_997",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "You should ask either guardian, \"Which door would the other guardian tell me not to open?\" This question ensures you are directed towards the correct door regardless of whom you ask."
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "end_action"
+            },
+            "variable": "step_997"
+          }
+        ],
+        "title": "What question should you ask to find the treasure?",
+        "action": "action_46947",
+        "boosts": [],
+        "handlers": [],
+        "condition": {
+          "intent": "action_46947_intent_33570"
+        },
+        "variables": [
+          {
+            "title": "You should ask either guardian, \"Which door would the other guar",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_997",
+            "data_type": "any"
+          }
+        ],
+        "launch_mode": "learning",
+        "next_action": "action_9704",
+        "topic_switch": {
+          "allowed_from": true,
+          "allowed_into": true,
+          "never_return": false
+        },
+        "disambiguation_opt_out": false
+      },
+      {
+        "steps": [
+          {
+            "step": "step_434",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "The team uses a parity-based strategy: if the number of indigo colors seen is even, they say orange; if odd, they say indigo. This strategy communicates the parity of indigo hair colors in front, helping each person deduce their hair color."
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "end_action"
+            },
+            "variable": "step_434"
+          }
+        ],
+        "title": "What strategy is used to solve The Four Hair Color Enigma?",
+        "action": "action_36795",
+        "boosts": [],
+        "handlers": [],
+        "condition": {
+          "intent": "action_36795_intent_48432"
+        },
+        "variables": [
+          {
+            "title": "The team uses a parity-based strategy: if the number of indigo c",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_434",
+            "data_type": "any"
+          }
+        ],
+        "launch_mode": "learning",
+        "next_action": "action_22021",
+        "topic_switch": {
+          "allowed_from": true,
+          "allowed_into": true,
+          "never_return": false
+        },
+        "disambiguation_opt_out": false
+      },
+      {
+        "steps": [
+          {
+            "step": "step_356",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "Here you can use the IBM Quantum Computing Virtual Labs\n\nhttps://bundles.yourlearning.ibm.com/students/learn/#NKQJKRXPMVER13KR/RKEXDXMZEDGY16QM"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "end_action"
+            },
+            "variable": "step_356"
+          }
+        ],
+        "title": "Quantum Computing Virtual Labs",
+        "action": "action_15072",
+        "boosts": [],
+        "handlers": [],
+        "condition": {
+          "intent": "action_15072_intent_21408"
+        },
+        "variables": [
+          {
+            "title": "Here you can use the IBM Quantum Computing Virtual Labs https://",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_356",
+            "data_type": "any"
+          }
+        ],
+        "launch_mode": "learning",
+        "next_action": "action_13035",
+        "topic_switch": {
+          "allowed_from": true,
+          "allowed_into": true,
+          "never_return": false
+        },
+        "disambiguation_opt_out": false
+      },
+      {
+        "steps": [
+          {
+            "step": "step_289",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "When scientists and engineers encounter difficult problems, they turn to supercomputers. These are very large classical computers, often with thousands of classical CPU and GPU cores capable of running very large calculations and advanced artificial intelligence. However, even supercomputers are binary code-based machines reliant on 20th-century transistor technology."
+                          },
+                          {
+                            "scalar": " They struggle to solve certain kinds of problems.\n\nIf a supercomputer gets stumped, that's probably because the big classical machine was asked to solve a problem with a high degree of complexity. When classical computers fail, it's often due to complexity.\n\nComplex problems are problems with lots of variables interacting in complicated ways."
+                          },
+                          {
+                            "scalar": " Modeling the behavior of individual atoms in a molecule is a complex problem, because of all the different electrons interacting with one another. Identifying subtle patterns of fraud in financial transactions or new physics in a supercollider are also complex problems. There are some complex problems that we do not know how to solve with classical computers at any scale."
+                          },
+                          {
+                            "scalar": "\n\nThe real world runs on quantum physics. Computers that make calculations using the quantum states of quantum bits should in many situations be our best tools for understanding it."
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "end_action"
+            },
+            "variable": "step_289"
+          }
+        ],
+        "title": "Why do we need quantum computers?",
+        "action": "action_40418",
+        "boosts": [],
+        "handlers": [],
+        "condition": {
+          "intent": "action_40418_intent_45218"
+        },
+        "variables": [
+          {
+            "title": "When scientists and engineers encounter difficult problems, they",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_289",
+            "data_type": "any"
+          }
+        ],
+        "launch_mode": "learning",
+        "next_action": "action_15072",
+        "topic_switch": {
+          "allowed_from": true,
+          "allowed_into": true,
+          "never_return": false
+        },
+        "disambiguation_opt_out": false
+      },
+      {
+        "steps": [
+          {
+            "step": "step_282",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "In classical computers, information is encoded in bits that can be either 0 or 1. Quantum computers use qubits, which can be in a superposition of both 0 and 1 states at the same time."
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "end_action"
+            },
+            "variable": "step_282"
+          }
+        ],
+        "title": "How is information encoded differently in quantum computers comp",
+        "action": "action_15417",
+        "boosts": [],
+        "handlers": [],
+        "condition": {
+          "intent": "action_15417_intent_49016"
+        },
+        "variables": [
+          {
+            "title": "In classical computers, information is encoded in bits that can ",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_282",
+            "data_type": "any"
+          }
+        ],
+        "launch_mode": "learning",
+        "next_action": "action_23244",
+        "topic_switch": {
+          "allowed_from": true,
+          "allowed_into": true,
+          "never_return": false
+        },
+        "disambiguation_opt_out": false
+      },
+      {
+        "steps": [
+          {
+            "step": "step_368",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "By declaring the observed parity of indigo hair colors, each team member provides crucial information for the next person to deduce their hair color, based on the combination of the parity observed and the answers given by those in front."
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "end_action"
+            },
+            "variable": "step_368"
+          }
+        ],
+        "title": "How does the parity strategy work in practice?",
+        "action": "action_39561",
+        "boosts": [],
+        "handlers": [],
+        "condition": {
+          "intent": "action_39561_intent_48680"
+        },
+        "variables": [
+          {
+            "title": "By declaring the observed parity of indigo hair colors, each tea",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_368",
+            "data_type": "any"
+          }
+        ],
+        "launch_mode": "learning",
+        "next_action": "action_36795",
+        "topic_switch": {
+          "allowed_from": true,
+          "allowed_into": true,
+          "never_return": false
+        },
+        "disambiguation_opt_out": false
+      },
+      {
+        "steps": [
+          {
+            "step": "step_497",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "Both guardians will point to the same door, the one without the treasure, due to the nature of the question. This allows you to identify the door with the treasure."
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "end_action"
+            },
+            "variable": "step_497"
+          }
+        ],
+        "title": "How does the guardians' response help find the treasure?",
+        "action": "action_14025",
+        "boosts": [],
+        "handlers": [],
+        "condition": {
+          "intent": "action_14025_intent_38105"
+        },
+        "variables": [
+          {
+            "title": "Both guardians will point to the same door, the one without the ",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_497",
+            "data_type": "any"
+          }
+        ],
+        "launch_mode": "learning",
+        "next_action": "action_46947",
+        "topic_switch": {
+          "allowed_from": true,
+          "allowed_into": true,
+          "never_return": false
+        },
+        "disambiguation_opt_out": false
+      },
+      {
+        "steps": [
+          {
+            "step": "step_196",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "Let's look a an example that shows how quantum computers can succeed where classical computers fail:\n\nA classical computer might be great at difficult tasks like sorting through a big database of molecules. But it will struggle to solve more complex problems, like simulating how those molecules behave.\n\n<br />\n\n\n\nToday, for the most part,"
+                          },
+                          {
+                            "scalar": " if scientists want to know how a molecule will behave they have to synthesize it and experiment with it in the real world. If they want to know how a slight tweak would impact its behavior, they usually need to synthesize the new version and run their experiment all over again. This is an expensive, time-"
+                          },
+                          {
+                            "scalar": "consuming process that impedes progress in fields as diverse as medicine and semiconductor design.\n\n<br />\n\n\n\nA classical supercomputer might try to simulate molecular behavior with brute force, leveraging its many processors to explore every possible way every part of the molecule might behave. But as it moves past the simplest, most straightforward molecules available, the supercomputer stalls."
+                          },
+                          {
+                            "scalar": " No computer has the working memory to handle all the possible permutations of molecular behavior using any known methods.\n\nQuantum algorithms take a new approach to these sorts of complex problems — creating multidimensional computational spaces. This turns out to be a much more efficient way of solving complex problems like chemical simulations."
+                          },
+                          {
+                            "scalar": "\n\n<br />\n\n\n\nWe do not have a good way to create these computational spaces with classical computers, which limits their usefulness without quantum computation. Industrial chemists are already exploring ways to integrate quantum methods into their work. This is just one example. Engineering firms, financial institutions,"
+                          },
+                          {
+                            "scalar": " global shipping companies — among others — are exploring use cases where quantum computers could solve important problems in their fields. An explosion of benefits from quantum research and development is taking shape on the horizon. As quantum hardware scales and quantum algorithms advance, many big, important problems like molecular simulation should find solutions."
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "end_action"
+            },
+            "variable": "step_196"
+          }
+        ],
+        "title": "Why quantum computers are faster",
+        "action": "action_4236",
+        "boosts": [],
+        "handlers": [],
+        "condition": {
+          "intent": "action_4236_intent_8067"
+        },
+        "variables": [
+          {
+            "title": "Let's look a an example that shows how quantum computers can suc",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_196",
+            "data_type": "any"
+          }
+        ],
+        "launch_mode": "learning",
+        "next_action": "action_40418",
+        "topic_switch": {
+          "allowed_from": true,
+          "allowed_into": true,
+          "never_return": false
+        },
+        "disambiguation_opt_out": false
+      },
+      {
+        "steps": [
+          {
+            "step": "step_794",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "The problem is modeled using quantum gates like NOT, CNOT, SWAP, and Hadamard gates to simulate the scenario where the guardians' answers and the treasure's location are in a state of superposition, reflecting the quantum computing paradigm."
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "continue"
+            },
+            "variable": "step_794"
+          }
+        ],
+        "title": "How is the Treasure Door Enigma represented on a quantum compute",
+        "action": "action_30801",
+        "boosts": [],
+        "handlers": [],
+        "condition": {
+          "intent": "action_30801_intent_45074"
+        },
+        "variables": [
+          {
+            "title": "The problem is modeled using quantum gates like NOT, CNOT, SWAP,",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_794",
+            "data_type": "any"
+          }
+        ],
+        "launch_mode": "learning",
+        "next_action": "action_14025",
+        "topic_switch": {
+          "allowed_from": true,
+          "allowed_into": true,
+          "never_return": false
+        },
+        "disambiguation_opt_out": false
+      },
+      {
+        "steps": [
+          {
+            "step": "step_481",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "The quantum model considers all possibilities where the treasure could be behind either door, and each guardian could be lying, existing in parallel until measured. The measurement then collapses the possibilities to a single outcome."
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "end_action"
+            },
+            "variable": "step_481"
+          }
+        ],
+        "title": "What are the possible outcomes in the quantum model of the enigm",
+        "action": "action_24879",
+        "boosts": [],
+        "handlers": [],
+        "condition": {
+          "intent": "action_24879_intent_49957"
+        },
+        "variables": [
+          {
+            "title": "The quantum model considers all possibilities where the treasure",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_481",
+            "data_type": "any"
+          }
+        ],
+        "launch_mode": "learning",
+        "next_action": "action_30801",
+        "topic_switch": {
+          "allowed_from": true,
+          "allowed_into": true,
+          "never_return": false
+        },
+        "disambiguation_opt_out": false
+      },
+      {
+        "steps": [
+          {
+            "step": "step_938",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "A qubit's state is measured through observation, yielding only two possible results (0 or 1), with the outcome depending on the qubit's superposition state and associated probabilities."
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "end_action"
+            },
+            "variable": "step_938"
+          }
+        ],
+        "title": "How can a qubit's state be measured?",
+        "action": "action_1448",
+        "boosts": [],
+        "handlers": [],
+        "condition": {
+          "intent": "action_1448_intent_41108"
+        },
+        "variables": [
+          {
+            "title": "A qubit's state is measured through observation, yielding only t",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_938",
+            "data_type": "any"
+          }
+        ],
+        "launch_mode": "learning",
+        "next_action": "action_2312",
+        "topic_switch": {
+          "allowed_from": true,
+          "allowed_into": true,
+          "never_return": false
+        },
+        "disambiguation_opt_out": false
+      },
+      {
+        "steps": [
+          {
+            "step": "step_730",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "Quantum computing allows for exploring all possibilities simultaneously due to superposition. This parallelism is used to model the scenario where the guardians' statements and the treasure's location are entangled and coexist until a final measurement is made."
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "end_action"
+            },
+            "variable": "step_730"
+          }
+        ],
+        "title": "How does quantum computing parallelism apply to solving the enig",
+        "action": "action_25015",
+        "boosts": [],
+        "handlers": [],
+        "condition": {
+          "intent": "action_25015_intent_33134"
+        },
+        "variables": [
+          {
+            "title": "Quantum computing allows for exploring all possibilities simulta",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_730",
+            "data_type": "any"
+          }
+        ],
+        "launch_mode": "learning",
+        "next_action": "action_24879",
+        "topic_switch": {
+          "allowed_from": true,
+          "allowed_into": true,
+          "never_return": false
+        },
+        "disambiguation_opt_out": false
+      },
+      {
+        "steps": [
+          {
+            "step": "step_452",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "The problem is modeled using CNOT and Hadamard gates on a quantum computer. Qubits 0 to 3 represent the team members, with the state 0 corresponding to even/orange and state 1 to odd/indigo. This setup allows exploration of all possible hair color distributions in parallel."
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "end_action"
+            },
+            "variable": "step_452"
+          }
+        ],
+        "title": "How is The Four Hair Color Enigma represented on a quantum compu",
+        "action": "action_20488",
+        "boosts": [],
+        "handlers": [],
+        "condition": {
+          "intent": "action_20488_intent_23377"
+        },
+        "variables": [
+          {
+            "title": "The problem is modeled using CNOT and Hadamard gates on a quantu",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_452",
+            "data_type": "any"
+          }
+        ],
+        "launch_mode": "learning",
+        "next_action": "action_39561",
+        "topic_switch": {
+          "allowed_from": true,
+          "allowed_into": true,
+          "never_return": false
+        },
+        "disambiguation_opt_out": false
+      },
+      {
+        "steps": [
+          {
+            "step": "step_274",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "An IBM Quantum processor is a wafer not much bigger than the one found in a laptop. And a quantum hardware system is about the size of a car, made up mostly of cooling systems to keep the superconducting processor at its ultra-cold operational temperature.\n\nA classical processor uses classical bits to perform its operations. A quantum computer uses qubits (CUE-"
+                          },
+                          {
+                            "scalar": "bits) to run multidimensional quantum algorithms.\n\n**Superconductors**\n\nYour desktop computer likely uses a fan to get cold enough to work. Our quantum processors need to be very cold – about a hundredth of a degree above absolute zero — to avoid “decoherence,” or retain their quantum states. To achieve this, we use super-cooled superfluids. At these ultra-"
+                          },
+                          {
+                            "scalar": "low temperatures certain materials exhibit an important quantum mechanical effect: electrons move through them without resistance. This makes them \"superconductors.\"\n\nWhen electrons pass through superconductors they match up, forming \"Cooper pairs.\" These pairs can carry a charge across barriers, or insulators, through a process known as quantum tunneling."
+                          },
+                          {
+                            "scalar": " Two superconductors placed on either side of an insulator form a Josephson junction.\n\n**Control**\n\nOur quantum computers use Josephson junctions as superconducting qubits. By firing microwave photons at these qubits, we can control their behavior and get them to hold, change, and read out individual units of quantum information.\n\n**Superposition**\n\nA qubit itself isn't very useful."
+                          },
+                          {
+                            "scalar": " But it can perform an important trick: placing the quantum information it holds into a state of superposition, which represents a combination of all possible configurations of the qubit. Groups of qubits in superposition can create complex, multidimensional computational spaces. Complex problems can be represented in new ways in these spaces."
+                          },
+                          {
+                            "scalar": "\n\n**Entanglement**\n\nQuantum entanglement is an effect that correlates the behavior of two separate things. Physicists have found that when two qubits are entangled, changes to one qubit directly impact the other.\n\n**Interference**\n\nIn an environment of entanged qubits placed into a state of superposition, there are waves of probabilities."
+                          },
+                          {
+                            "scalar": " These are the probabilities of the outcomes of a measurement of the system. These waves can build on each other when many of them peak at a particular outcome, or cancel each other out when peaks and troughs interact. These are both forms of interference.\n\nA computation on a quantum computer works by preparing a superposition of all possibile computational states. A quantum circuit,"
+                          },
+                          {
+                            "scalar": " prepared by the user, uses interference selectively on the components of the superposition according to an algorithm. Many possible outcomes are cancelled out through interference, while others are amplified. The amplified outcomes are the solutions to the computation."
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "end_action"
+            },
+            "variable": "step_274"
+          }
+        ],
+        "title": "How do quantum computers work?",
+        "action": "action_39936",
+        "boosts": [],
+        "handlers": [],
+        "condition": {
+          "intent": "action_39936_intent_6861"
+        },
+        "variables": [
+          {
+            "title": "An IBM Quantum processor is a wafer not much bigger than the one",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_274",
+            "data_type": "any"
+          }
+        ],
+        "launch_mode": "learning",
+        "next_action": "action_4236",
+        "topic_switch": {
+          "allowed_from": true,
+          "allowed_into": true,
+          "never_return": false
+        },
+        "disambiguation_opt_out": false
+      },
+      {
+        "steps": [
+          {
+            "step": "step_407",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "Quantum computers are aimed at solving complex problems beyond the reach of classical computers, such as optimizing carbon capture technologies for combating climate change, creating more efficient fertilizers without harming the environment, and understanding fundamental questions about the universe and matter at atomic and subatomic levels."
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "end_action"
+            },
+            "variable": "step_407"
+          }
+        ],
+        "title": "What unique problems are quantum computers expected to solve?",
+        "action": "action_34774",
+        "boosts": [],
+        "handlers": [],
+        "condition": {
+          "intent": "action_34774_intent_34688"
+        },
+        "variables": [
+          {
+            "title": "Quantum computers are aimed at solving complex problems beyond t",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_407",
+            "data_type": "any"
+          }
+        ],
+        "launch_mode": "learning",
+        "next_action": "action_33746",
+        "topic_switch": {
+          "allowed_from": true,
+          "allowed_into": true,
+          "never_return": false
+        },
+        "disambiguation_opt_out": false
+      },
+      {
+        "steps": [
+          {
+            "step": "step_793",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "Quantum computing could revolutionize battery technology by enabling researchers to simulate and analyze complex chemical reactions within batteries. This could lead to the discovery of new materials and designs for more efficient, powerful batteries essential for electric vehicles and renewable energy storage."
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "end_action"
+            },
+            "variable": "step_793"
+          }
+        ],
+        "title": "How could quantum computing impact the development of new batter",
+        "action": "action_44815",
+        "boosts": [],
+        "handlers": [],
+        "condition": {
+          "and": [
+            {
+              "intent": "action_44815_intent_17376"
+            },
+            {
+              "exists": {
+                "system_variable": "digressed_from"
+              }
+            }
+          ]
+        },
+        "variables": [
+          {
+            "title": "Quantum computing could revolutionize battery technology by enab",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_793",
+            "data_type": "any"
+          }
+        ],
+        "launch_mode": "learning",
+        "next_action": "action_34774",
+        "topic_switch": {
+          "allowed_from": true,
+          "allowed_into": true,
+          "never_return": false
+        },
+        "disambiguation_opt_out": false
+      },
+      {
+        "steps": [
+          {
+            "step": "step_726",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "Running the algorithm multiple times yields 16 different hair color distributions, demonstrating the quantum parallelism and entanglement principles. The strategy achieves at least three correct answers out of four, with a 50% chance of all four being correct."
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "end_action"
+            },
+            "variable": "step_726"
+          }
+        ],
+        "title": "What are the possible outcomes of the quantum model for this eni",
+        "action": "action_44757",
+        "boosts": [],
+        "handlers": [],
+        "condition": {
+          "intent": "action_44757_intent_6552"
+        },
+        "variables": [
+          {
+            "title": "Running the algorithm multiple times yields 16 different hair co",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_726",
+            "data_type": "any"
+          }
+        ],
+        "launch_mode": "learning",
+        "next_action": "action_20488",
+        "topic_switch": {
+          "allowed_from": true,
+          "allowed_into": true,
+          "never_return": false
+        },
+        "disambiguation_opt_out": false
+      },
+      {
+        "steps": [
+          {
+            "step": "step_960",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "Right now, IBM Quantum leads the world in quantum computing hardware and software. Our Roadmap is a clear, detailed plan to scale quantum processors, overcome the scaling problem, and build the hardware necessary for quantum advantage in the era of noisy quantum machines.\n\nToday,"
+                          },
+                          {
+                            "scalar": " a great deal of the work in the field of quantum computing is devoted to realizing error correction — a technqiue that would enable noise-free quantum computation on very large quantum computers.\n\nRecent work from IBM and elsewhere has shown that noisy quantum computers may be able to do useful work in the near future, even before the advent of error correction,"
+                          },
+                          {
+                            "scalar": " using techniques known as error mitigation.\n\nIBM has spent years advancing the software that will be necessary to do that useful work. We introduced the Qiskit quantum SDK. It is open-source, Python-based, and by far the most widely-"
+                          },
+                          {
+                            "scalar": "used quantum SDK in the world — useful for executions both on IBM’s fleet of superconducting quantum computers and on systems that use alternative technologies like ions trapped in magnetic fields.\n\nWe developed Qiskit Runtime, the most powerful quantum programming model in the world. (Learn more about both Qiskit and Qiskit Runtime, and how to get started, in the next section."
+                          },
+                          {
+                            "scalar": ")\n\nAchieving quantum advantage will require new methods of suppressing errors, increasing speed, and orchestrating quantum and classical resources. The foundations of that work are being laid today in Qiskit Runtime by IBM and our partners in industry, academia, and startups."
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "end_action"
+            },
+            "variable": "step_960"
+          }
+        ],
+        "title": "Making quantum computers useful",
+        "action": "action_33746",
+        "boosts": [],
+        "handlers": [],
+        "condition": {
+          "intent": "action_33746_intent_25612"
+        },
+        "variables": [
+          {
+            "title": "Right now, IBM Quantum leads the world in quantum computing hard",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_960",
+            "data_type": "any"
+          }
+        ],
+        "launch_mode": "learning",
+        "next_action": "action_39936",
+        "topic_switch": {
+          "allowed_from": true,
+          "allowed_into": true,
+          "never_return": false
+        },
+        "disambiguation_opt_out": false
+      },
+      {
+        "steps": [
+          {
+            "step": "step_888",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "Advancements in quantum computing are being pursued through the development and global distribution of highly advanced quantum devices and platforms. Collaborative efforts are emphasized as essential for addressing future challenges with these technologies."
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "end_action"
+            },
+            "variable": "step_888"
+          }
+        ],
+        "title": "What approach is being taken to advance quantum computing techno",
+        "action": "action_36321",
+        "boosts": [],
+        "handlers": [],
+        "condition": {
+          "intent": "action_36321_intent_28293"
+        },
+        "variables": [
+          {
+            "title": "Advancements in quantum computing are being pursued through the ",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_888",
+            "data_type": "any"
+          }
+        ],
+        "launch_mode": "learning",
+        "next_action": "action_44815",
+        "topic_switch": {
+          "allowed_from": true,
+          "allowed_into": true,
+          "never_return": false
+        },
+        "disambiguation_opt_out": false
+      },
+      {
+        "steps": [
+          {
+            "step": "step_353",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "Entanglement is a phenomenon where qubits become interlinked, such that the measurement of one qubit instantly determines the state of another, regardless of distance."
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "end_action"
+            },
+            "variable": "step_353"
+          }
+        ],
+        "title": "How does entanglement work in quantum computing?",
+        "action": "action_2267",
+        "boosts": [],
+        "handlers": [],
+        "condition": {
+          "intent": "action_2267_intent_28776"
+        },
+        "variables": [
+          {
+            "title": "Entanglement is a phenomenon where qubits become interlinked, su",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_353",
+            "data_type": "any"
+          }
+        ],
+        "launch_mode": "learning",
+        "next_action": "action_39446",
+        "topic_switch": {
+          "allowed_from": true,
+          "allowed_into": true,
+          "never_return": false
+        },
+        "disambiguation_opt_out": false
+      },
+      {
+        "steps": [
+          {
+            "step": "step_448",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "Quantum computing allows for the simultaneous exploration of all possible scenarios, leveraging superposition and entanglement to evaluate the outcomes in parallel, significantly enhancing the strategy's effectiveness and efficiency."
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "end_action"
+            },
+            "variable": "step_448"
+          }
+        ],
+        "title": "How does quantum computing enhance the solution strategy for thi",
+        "action": "action_35041",
+        "boosts": [],
+        "handlers": [],
+        "condition": {
+          "intent": "action_35041_intent_29237"
+        },
+        "variables": [
+          {
+            "title": "Quantum computing allows for the simultaneous exploration of all",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_448",
+            "data_type": "any"
+          }
+        ],
+        "launch_mode": "learning",
+        "next_action": "action_44757",
+        "topic_switch": {
+          "allowed_from": true,
+          "allowed_into": true,
+          "never_return": false
+        },
+        "disambiguation_opt_out": false
+      },
+      {
+        "steps": [
+          {
+            "step": "step_509",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "Quantum computing allows for the simultaneous exploration of all possible key locations and coin configurations, utilizing superposition and entanglement. This significantly enhances the efficiency of finding the solution."
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "end_action"
+            },
+            "variable": "step_509"
+          }
+        ],
+        "title": "How does quantum computing facilitate solving this puzzle?",
+        "action": "action_32199",
+        "boosts": [],
+        "handlers": [],
+        "condition": {
+          "intent": "action_32199_intent_47174"
+        },
+        "variables": [
+          {
+            "title": "Quantum computing allows for the simultaneous exploration of all",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_509",
+            "data_type": "any"
+          }
+        ],
+        "launch_mode": "learning",
+        "next_action": "action_6143",
+        "topic_switch": {
+          "allowed_from": true,
+          "allowed_into": true,
+          "never_return": false
+        },
+        "disambiguation_opt_out": false
+      },
+      {
+        "steps": [
+          {
+            "step": "step_534",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "The document highlights advancements such as IBM's development of quantum systems accessible via cloud and the exponential growth in quantum circuit execution."
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "end_action"
+            },
+            "variable": "step_534"
+          }
+        ],
+        "title": "What advancements are highlighted in the future of quantum compu",
+        "action": "action_15397",
+        "boosts": [],
+        "handlers": [],
+        "condition": {
+          "intent": "action_15397_intent_47538"
+        },
+        "variables": [
+          {
+            "title": "The document highlights advancements such as IBM's development o",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_534",
+            "data_type": "any"
+          }
+        ],
+        "launch_mode": "learning",
+        "next_action": "action_36321",
+        "topic_switch": {
+          "allowed_from": true,
+          "allowed_into": true,
+          "never_return": false
+        },
+        "disambiguation_opt_out": false
+      },
+      {
+        "steps": [
+          {
+            "step": "step_449",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "The enigma involves finding a hidden key under one of four squares on a chessboard. You must flip one coin on the board to help a partner, Bob, deduce the key's location without further manipulation."
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "end_action"
+            },
+            "variable": "step_449"
+          }
+        ],
+        "title": "What is the Four-Square Chessboard Enigma?",
+        "action": "action_25305",
+        "boosts": [],
+        "handlers": [],
+        "condition": {
+          "intent": "action_25305_intent_46035"
+        },
+        "variables": [
+          {
+            "title": "The enigma involves finding a hidden key under one of four squar",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_449",
+            "data_type": "any"
+          }
+        ],
+        "launch_mode": "learning",
+        "next_action": "action_35041",
+        "topic_switch": {
+          "allowed_from": true,
+          "allowed_into": true,
+          "never_return": false
+        },
+        "disambiguation_opt_out": false
+      },
+      {
+        "steps": [
+          {
+            "step": "step_789",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "The strategy involves using error correction codes from classical computing. It focuses on flipping a coin to communicate the key's location based on coin parity across lines and columns, aiding Bob in deducing the correct square."
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "end_action"
+            },
+            "variable": "step_789"
+          }
+        ],
+        "title": "What strategy is suggested to solve the enigma?",
+        "action": "action_22126",
+        "boosts": [],
+        "handlers": [],
+        "condition": {
+          "intent": "action_22126_intent_13092"
+        },
+        "variables": [
+          {
+            "title": "The strategy involves using error correction codes from classica",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_789",
+            "data_type": "any"
+          }
+        ],
+        "launch_mode": "learning",
+        "next_action": "action_25305",
+        "topic_switch": {
+          "allowed_from": true,
+          "allowed_into": true,
+          "never_return": false
+        },
+        "disambiguation_opt_out": false
+      },
+      {
+        "steps": [
+          {
+            "step": "step_194",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "It emphasizes the growing community of users, ranging from researchers to business professionals, exploring quantum computing's potential applications."
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "end_action"
+            },
+            "variable": "step_194"
+          }
+        ],
+        "title": "How is the quantum computing community expected to grow?",
+        "action": "action_37259",
+        "boosts": [],
+        "handlers": [],
+        "condition": {
+          "intent": "action_37259_intent_17946"
+        },
+        "variables": [
+          {
+            "title": "It emphasizes the growing community of users, ranging from resea",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_194",
+            "data_type": "any"
+          }
+        ],
+        "launch_mode": "learning",
+        "next_action": "action_15397",
+        "topic_switch": {
+          "allowed_from": true,
+          "allowed_into": true,
+          "never_return": false
+        },
+        "disambiguation_opt_out": false
+      },
+      {
+        "steps": [
+          {
+            "step": "step_467",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "To delve deeper into quantum programming, one can explore the Institut quantique's Quantum enigmas series, which offers practical challenges to test quantum logic skills."
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "end_action"
+            },
+            "variable": "step_467"
+          }
+        ],
+        "title": "How can someone learn more about quantum programming?",
+        "action": "action_21080",
+        "boosts": [],
+        "handlers": [],
+        "condition": {
+          "intent": "action_21080_intent_3044"
+        },
+        "variables": [
+          {
+            "title": "To delve deeper into quantum programming, one can explore the In",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_467",
+            "data_type": "any"
+          }
+        ],
+        "launch_mode": "learning",
+        "next_action": "action_4212",
+        "topic_switch": {
+          "allowed_from": true,
+          "allowed_into": true,
+          "never_return": false
+        },
+        "disambiguation_opt_out": false
+      },
+      {
+        "steps": [
+          {
+            "step": "step_121",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "Quantum gates like NOT, CNOT, Toffoli, and Hadamard are used to represent the chessboard squares and the key's location. This setup explores all possible scenarios in parallel, leveraging quantum computing principles."
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "end_action"
+            },
+            "variable": "step_121"
+          }
+        ],
+        "title": "How is this enigma modeled on a quantum computer?",
+        "action": "action_6143",
+        "boosts": [],
+        "handlers": [],
+        "condition": {
+          "intent": "action_6143_intent_5661"
+        },
+        "variables": [
+          {
+            "title": "Quantum gates like NOT, CNOT, Toffoli, and Hadamard are used to ",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_121",
+            "data_type": "any"
+          }
+        ],
+        "launch_mode": "learning",
+        "next_action": "action_22126",
+        "topic_switch": {
+          "allowed_from": true,
+          "allowed_into": true,
+          "never_return": false
+        },
+        "disambiguation_opt_out": false
+      },
+      {
+        "steps": [
+          {
+            "step": "step_871",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "The vision includes a future where quantum computing, classical computing, and artificial intelligence converge to revolutionize problem-solving and discovery across various fields."
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "end_action"
+            },
+            "variable": "step_871"
+          }
+        ],
+        "title": "What is the vision for quantum computing's role in problem-solvi",
+        "action": "action_11999",
+        "boosts": [],
+        "handlers": [],
+        "condition": {
+          "intent": "action_11999_intent_13884"
+        },
+        "variables": [
+          {
+            "title": "The vision includes a future where quantum computing, classical ",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_871",
+            "data_type": "any"
+          }
+        ],
+        "launch_mode": "learning",
+        "next_action": "action_37259",
+        "topic_switch": {
+          "allowed_from": true,
+          "allowed_into": true,
+          "never_return": false
+        },
+        "disambiguation_opt_out": false
+      },
+      {
+        "steps": [
+          {
+            "step": "step_818",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "Yes, the strategy can be adapted for larger chessboards, such as 4x4 or 8x8, by applying the same principles of quantum computing and parity communication to increase complexity and challenge."
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "continue"
+            },
+            "variable": "step_818"
+          }
+        ],
+        "title": "Can the strategy for the Four-Square Chessboard Enigma be scaled",
+        "action": "action_16285",
+        "boosts": [],
+        "handlers": [],
+        "condition": {
+          "intent": "action_16285_intent_12620"
+        },
+        "variables": [
+          {
+            "title": "Yes, the strategy can be adapted for larger chessboards, such as",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_818",
+            "data_type": "any"
+          }
+        ],
+        "launch_mode": "learning",
+        "next_action": "action_32199",
+        "topic_switch": {
+          "allowed_from": true,
+          "allowed_into": true,
+          "never_return": false
+        },
+        "disambiguation_opt_out": false
+      },
+      {
+        "steps": [
+          {
+            "step": "step_163",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "Quantum computers could revolutionize fields such as medicine by simulating chemical bonds, optimize complex systems, and enhance machine learning and artificial intelligence."
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "end_action"
+            },
+            "variable": "step_163"
+          }
+        ],
+        "title": "What potential applications do quantum computers have?",
+        "action": "action_22794",
+        "boosts": [],
+        "handlers": [],
+        "condition": {
+          "intent": "action_22794_intent_44677"
+        },
+        "variables": [
+          {
+            "title": "Quantum computers could revolutionize fields such as medicine by",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_163",
+            "data_type": "any"
+          }
+        ],
+        "launch_mode": "learning",
+        "next_action": "action_11999",
+        "topic_switch": {
+          "allowed_from": true,
+          "allowed_into": true,
+          "never_return": false
+        },
+        "disambiguation_opt_out": false
+      },
+      {
+        "steps": [
+          {
+            "step": "step_459",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "Key challenges include maintaining qubit stability (decoherence), achieving fault tolerance, and developing algorithms optimized for quantum computing's unique capabilities."
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "continue"
+            },
+            "variable": "step_459"
+          }
+        ],
+        "title": "What challenges are associated with quantum computing?",
+        "action": "action_46359",
+        "boosts": [],
+        "handlers": [],
+        "condition": {
+          "intent": "action_46359_intent_21334"
+        },
+        "variables": [
+          {
+            "title": "Key challenges include maintaining qubit stability (decoherence)",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_459",
+            "data_type": "any"
+          }
+        ],
+        "launch_mode": "learning",
+        "next_action": "action_22794",
+        "topic_switch": {
+          "allowed_from": true,
+          "allowed_into": true,
+          "never_return": false
+        },
+        "disambiguation_opt_out": false
+      },
+      {
+        "steps": [
+          {
+            "step": "step_192",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "It's a probability puzzle involving three safes, one with a diamond inside. You choose a safe, then one of the remaining safes without the diamond is opened. You're then asked if you want to switch your choice."
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "end_action"
+            },
+            "variable": "step_192"
+          }
+        ],
+        "title": "What is the Monty Hall Problem?",
+        "action": "action_17957",
+        "boosts": [],
+        "handlers": [],
+        "condition": {
+          "intent": "action_17957_intent_34989"
+        },
+        "variables": [
+          {
+            "title": "It's a probability puzzle involving three safes, one with a diam",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_192",
+            "data_type": "any"
+          }
+        ],
+        "launch_mode": "learning",
+        "next_action": "action_16285",
+        "topic_switch": {
+          "allowed_from": true,
+          "allowed_into": true,
+          "never_return": false
+        },
+        "disambiguation_opt_out": false
+      },
+      {
+        "steps": [
+          {
+            "step": "step_860",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "Switching safes after one is opened increases your chance of winning. Initially, you have a 1/3 chance of choosing correctly, but switching gives you a 2/3 chance because it exploits information revealed after the initial choice."
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "end_action"
+            },
+            "variable": "step_860"
+          }
+        ],
+        "title": "What strategy increases your chances of finding the diamond?",
+        "action": "action_36160",
+        "boosts": [],
+        "handlers": [],
+        "condition": {
+          "intent": "action_36160_intent_10787"
+        },
+        "variables": [
+          {
+            "title": "Switching safes after one is opened increases your chance of win",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_860",
+            "data_type": "any"
+          }
+        ],
+        "launch_mode": "learning",
+        "next_action": "action_17957",
+        "topic_switch": {
+          "allowed_from": true,
+          "allowed_into": true,
+          "never_return": false
+        },
+        "disambiguation_opt_out": false
+      },
+      {
+        "steps": [
+          {
+            "step": "step_741",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "Using quantum gates like NOT, CNOT, Hadamard, and Ry, the safes are represented by qubits in a quantum computer, allowing exploration of all possible outcomes in parallel through quantum superposition and entanglement."
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "end_action"
+            },
+            "variable": "step_741"
+          }
+        ],
+        "title": "How is the Monty Hall Problem modeled on a quantum computer?",
+        "action": "action_35387",
+        "boosts": [],
+        "handlers": [],
+        "condition": {
+          "intent": "action_35387_intent_38318"
+        },
+        "variables": [
+          {
+            "title": "Using quantum gates like NOT, CNOT, Hadamard, and Ry, the safes ",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_741",
+            "data_type": "any"
+          }
+        ],
+        "launch_mode": "learning",
+        "next_action": "action_36160",
+        "topic_switch": {
+          "allowed_from": true,
+          "allowed_into": true,
+          "never_return": false
+        },
+        "disambiguation_opt_out": false
+      },
+      {
+        "steps": [
+          {
+            "step": "step_814",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "Quantum computing demonstrates the probability distribution across different scenarios, confirming the counterintuitive strategy of switching safes to increase the chances of finding the diamond."
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "end_action"
+            },
+            "variable": "step_814"
+          }
+        ],
+        "title": "What does quantum computing reveal about the Monty Hall Problem?",
+        "action": "action_18931",
+        "boosts": [],
+        "handlers": [],
+        "condition": {
+          "intent": "action_18931_intent_42739"
+        },
+        "variables": [
+          {
+            "title": "Quantum computing demonstrates the probability distribution acro",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_814",
+            "data_type": "any"
+          }
+        ],
+        "launch_mode": "learning",
+        "next_action": "action_35387",
+        "topic_switch": {
+          "allowed_from": true,
+          "allowed_into": true,
+          "never_return": false
+        },
+        "disambiguation_opt_out": false
+      },
+      {
+        "steps": [
+          {
+            "step": "step_780",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "Switching works because it effectively gives you the choice of two safes instead of one, leveraging the information gained when one of the safes is shown to be empty."
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "end_action"
+            },
+            "variable": "step_780"
+          }
+        ],
+        "title": "Why does switching safes work in your favor?",
+        "action": "action_28423",
+        "boosts": [],
+        "handlers": [],
+        "condition": {
+          "intent": "action_28423_intent_5696"
+        },
+        "variables": [
+          {
+            "title": "Switching works because it effectively gives you the choice of t",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_780",
+            "data_type": "any"
+          }
+        ],
+        "launch_mode": "learning",
+        "next_action": "action_18931",
+        "topic_switch": {
+          "allowed_from": true,
+          "allowed_into": true,
+          "never_return": false
+        },
+        "disambiguation_opt_out": false
+      },
+      {
+        "steps": [
+          {
+            "step": "step_655",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "Quantum computing is a rapidly-emerging technology that harnesses the laws of quantum mechanics to solve problems too complex for classical computers.\n\nToday, IBM Quantum makes real quantum hardware — a tool scientists only began to imagine three decades ago — available to hundreds of thousands of developers. Our engineers deliver ever-more-"
+                          },
+                          {
+                            "scalar": "powerful superconducting quantum processors at regular intervals, alongside crucial advances in software and quantum-classical orchestration. This work drives toward the quantum computing speed and capacity necessary to change the world.\n\nThese machines are very different from the classical computers that have been around for more than half a century."
+                          },
+                          {
+                            "scalar": " Here's a primer on this transformative technology.\n\n[Explore IBM Quantum systems ](https://www.ibm.com/quantum/systems)"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                },
+                {
+                  "options": [
+                    {
+                      "label": "Yes",
+                      "value": {
+                        "input": {
+                          "text": "Yes"
+                        }
+                      }
+                    },
+                    {
+                      "label": "No",
+                      "value": {
+                        "input": {
+                          "text": "No"
+                        }
+                      }
+                    }
+                  ],
+                  "response_type": "option",
+                  "repeat_on_reprompt": true
+                }
+              ]
+            },
+            "handlers": [
+              {
+                "type": "not_found",
+                "title": "validation_not_found_handler",
+                "output": {
+                  "generic": [
+                    {
+                      "values": [
+                        {
+                          "text_expression": {
+                            "concat": [
+                              {
+                                "scalar": "I'm sorry, I did not catch that, please restate your response."
+                              }
+                            ]
+                          }
+                        }
+                      ],
+                      "response_type": "text",
+                      "selection_policy": "incremental"
+                    }
+                  ]
+                },
+                "handler": "validation_not_found_handler",
+                "resolver": {
+                  "type": "prompt_again"
+                },
+                "next_handler": "validation_not_found_max_tries_handler"
+              },
+              {
+                "type": "not_found_max_tries",
+                "title": "validation_not_found_max_tries_handler",
+                "handler": "validation_not_found_max_tries_handler",
+                "resolver": {
+                  "type": "fallback"
+                }
+              }
+            ],
+            "question": {
+              "entity": "sys-yes-no",
+              "max_tries": 3,
+              "response_collection_behavior": "always_ask"
+            },
+            "resolver": {
+              "type": "end_action"
+            },
+            "variable": "step_655",
+            "next_step": "step_112"
+          },
+          {
+            "step": "step_112",
+            "handlers": [],
+            "resolver": {
+              "type": "continue"
+            },
+            "variable": "step_112"
+          }
+        ],
+        "title": "What is quantum computer",
+        "action": "action_47999",
+        "boosts": [],
+        "handlers": [],
+        "condition": {
+          "intent": "action_47999_intent_15961"
+        },
+        "variables": [
+          {
+            "title": "No response",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_112",
+            "data_type": "any"
+          },
+          {
+            "title": "Quantum computing is a rapidly-emerging technology that harnesse",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_655",
+            "data_type": "yes_no"
+          }
+        ],
+        "launch_mode": "learning",
+        "next_action": "action_3898",
+        "topic_switch": {
+          "allowed_from": true,
+          "allowed_into": true,
+          "never_return": false
+        },
+        "disambiguation_opt_out": false
+      },
+      {
+        "steps": [
+          {
+            "step": "step_402",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "IBM Quantum has a clear roadmap to practical quantum advantage in the coming years. This goal requires scalable, error-corrected quantum systems. We develop bottom-up approaches to the problem of noisy qubits and incorporate error correction techniques to realize this technology’s true potential."
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                },
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "More information can be found:"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                },
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "https://research.ibm.com/topics/quantum-error-correction"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "end_action"
+            },
+            "variable": "step_402"
+          }
+        ],
+        "title": "Quantum Error Correction",
+        "action": "action_30251",
+        "boosts": [],
+        "handlers": [],
+        "condition": {
+          "intent": "action_30251_intent_44166"
+        },
+        "variables": [
+          {
+            "title": "IBM Quantum has a clear roadmap to practical quantum advantage i",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_402",
+            "data_type": "any"
+          }
+        ],
+        "launch_mode": "learning",
+        "next_action": "action_38156",
+        "topic_switch": {
+          "allowed_from": true,
+          "allowed_into": true,
+          "never_return": false
+        },
+        "disambiguation_opt_out": false
+      },
+      {
+        "steps": [
+          {
+            "step": "step_870",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "Quantum computing represents a paradigm shift in the types of problems we can solve. Getting it right requires deep understanding of the underlying theory. We’re exploring the fundamentals of quantum science, from entanglement and superposition to the development of novel quantum algorithms.\n\n<br />\n\n\n\nMore information can be found:\n\nhttps://research.ibm.com/topics/quantum-information-science"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "end_action"
+            },
+            "variable": "step_870"
+          }
+        ],
+        "title": "Quantum Information Science",
+        "action": "action_38156",
+        "boosts": [],
+        "handlers": [],
+        "condition": {
+          "intent": "action_38156_intent_10222"
+        },
+        "variables": [
+          {
+            "title": "Quantum computing represents a paradigm shift in the types of pr",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_870",
+            "data_type": "any"
+          }
+        ],
+        "launch_mode": "learning",
+        "next_action": "action_36082",
+        "topic_switch": {
+          "allowed_from": true,
+          "allowed_into": true,
+          "never_return": false
+        },
+        "disambiguation_opt_out": false
+      },
+      {
+        "steps": [
+          {
+            "step": "step_782",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "We offer developers open-source tools to harness the power of quantum computing, as well as educational offerings and events. The Qiskit open-source SDK is the leading platform for quantum development worldwide, and its active quantum developer community is the largest in the world.\n\n<br />\n\n\n\nMore information can be found:\n\nhttps://research.ibm.com/topics/quantum-community"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "end_action"
+            },
+            "variable": "step_782"
+          }
+        ],
+        "title": "Quantum Community",
+        "action": "action_36082",
+        "boosts": [],
+        "handlers": [],
+        "condition": {
+          "intent": "action_36082_intent_42464"
+        },
+        "variables": [
+          {
+            "title": "We offer developers open-source tools to harness the power of qu",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_782",
+            "data_type": "any"
+          }
+        ],
+        "launch_mode": "learning",
+        "next_action": "action_35734",
+        "topic_switch": {
+          "allowed_from": true,
+          "allowed_into": true,
+          "never_return": false
+        },
+        "disambiguation_opt_out": false
+      },
+      {
+        "steps": [
+          {
+            "step": "step_948",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "Few fields will get value from quantum computing as quickly as chemistry. Even today’s supercomputers struggle to model a single molecule in its full complexity. We study algorithms designed to do what those machines can’t, and power a new era of discovery in chemistry, materials, and medicine."
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                },
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "More information can be found:"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                },
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "https://research.ibm.com/topics/quantum-chemistry"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "end_action"
+            },
+            "variable": "step_948"
+          }
+        ],
+        "title": "Quantum Chemistry",
+        "action": "action_33156",
+        "boosts": [],
+        "handlers": [],
+        "condition": {
+          "intent": "action_33156_intent_11786"
+        },
+        "variables": [
+          {
+            "title": "Few fields will get value from quantum computing as quickly as c",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_948",
+            "data_type": "any"
+          }
+        ],
+        "launch_mode": "learning",
+        "next_action": "action_46359",
+        "topic_switch": {
+          "allowed_from": true,
+          "allowed_into": true,
+          "never_return": false
+        },
+        "disambiguation_opt_out": false
+      },
+      {
+        "steps": [
+          {
+            "step": "step_645",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "Few datasets are as complex as those in finance, and quantum computing could reveal hidden patterns in complex data. We’re developing algorithms to reveal once-invisible dynamic arbitrage opportunities, better react to volatility, and serve other crucial unmet needs in the financial sector."
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                },
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "More information can be found:"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                },
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "https://research.ibm.com/topics/quantum-finance"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "end_action"
+            },
+            "variable": "step_645"
+          }
+        ],
+        "title": "Quantum Finance",
+        "action": "action_9093",
+        "boosts": [],
+        "handlers": [],
+        "condition": {
+          "intent": "action_9093_intent_6702"
+        },
+        "variables": [
+          {
+            "title": "Few datasets are as complex as those in finance, and quantum com",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_645",
+            "data_type": "any"
+          }
+        ],
+        "launch_mode": "learning",
+        "next_action": "action_33156",
+        "topic_switch": {
+          "allowed_from": true,
+          "allowed_into": true,
+          "never_return": false
+        },
+        "disambiguation_opt_out": false
+      },
+      {
+        "steps": [
+          {
+            "step": "step_297",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "Quantum advantage requires innovation at every layer of the quantum stack. Our software team works alongside the hardware developers to build an expansive library of quantum circuits and to create programming tools so that anyone can develop their own quantum software."
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                },
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "More information can be found:"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                },
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "https://research.ibm.com/topics/quantum-hardware"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "end_action"
+            },
+            "variable": "step_297"
+          }
+        ],
+        "title": "Quantum Circuits and Software",
+        "action": "action_40479",
+        "boosts": [],
+        "handlers": [],
+        "condition": {
+          "intent": "action_40479_intent_20897"
+        },
+        "variables": [
+          {
+            "title": "Quantum advantage requires innovation at every layer of the quan",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_297",
+            "data_type": "any"
+          }
+        ],
+        "launch_mode": "learning",
+        "next_action": "action_9093",
+        "topic_switch": {
+          "allowed_from": true,
+          "allowed_into": true,
+          "never_return": false
+        },
+        "disambiguation_opt_out": false
+      },
+      {
+        "steps": [
+          {
+            "step": "step_953",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "IBM Quantum has a clear vision toward achieving practical quantum advantage. Today we are building state-of-the-art superconducting quantum processors integrated into classical computing workflows, relying on the latest quantum science, cryogenic engineering, systems engineering, and industrial design."
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                },
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "More information can be found:"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                },
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "https://research.ibm.com/topics/quantum-hardware"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "end_action"
+            },
+            "variable": "step_953"
+          }
+        ],
+        "title": "Quantum Hardware",
+        "action": "action_35734",
+        "boosts": [],
+        "handlers": [],
+        "condition": {
+          "intent": "action_35734_intent_5442"
+        },
+        "variables": [
+          {
+            "title": "IBM Quantum has a clear vision toward achieving practical quantu",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_953",
+            "data_type": "any"
+          }
+        ],
+        "launch_mode": "learning",
+        "next_action": "action_40479",
+        "topic_switch": {
+          "allowed_from": true,
+          "allowed_into": true,
+          "never_return": false
+        },
+        "disambiguation_opt_out": false
+      },
+      {
+        "steps": [
+          {
+            "step": "step_699",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "A qubit, or quantum bit, is the fundamental unit of quantum information in a quantum computer, capable of being in both 0 and 1 states simultaneously due to superposition."
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "end_action"
+            },
+            "variable": "step_699"
+          }
+        ],
+        "title": "What is a qubit?",
+        "action": "action_23244",
+        "boosts": [],
+        "handlers": [],
+        "condition": {
+          "intent": "action_23244_intent_21909"
+        },
+        "variables": [
+          {
+            "title": "A qubit, or quantum bit, is the fundamental unit of quantum info",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_699",
+            "data_type": "any"
+          }
+        ],
+        "launch_mode": "learning",
+        "next_action": "action_47999",
+        "topic_switch": {
+          "allowed_from": true,
+          "allowed_into": true,
+          "never_return": false
+        },
+        "disambiguation_opt_out": false
+      },
+      {
+        "steps": [
+          {
+            "step": "step_225",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "The Bloch sphere is a representation of a qubit's state, where the positions of the X, Y, and Z axes illustrate the qubit's state, including its superpositions and relative phases between 0 and 1."
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "end_action"
+            },
+            "variable": "step_225"
+          }
+        ],
+        "title": "What is the Bloch sphere and how is it used in quantum computing",
+        "action": "action_2312",
+        "boosts": [],
+        "handlers": [],
+        "condition": {
+          "intent": "action_2312_intent_2640"
+        },
+        "variables": [
+          {
+            "title": "The Bloch sphere is a representation of a qubit's state, where t",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_225",
+            "data_type": "any"
+          }
+        ],
+        "launch_mode": "learning",
+        "next_action": "action_15417",
+        "topic_switch": {
+          "allowed_from": true,
+          "allowed_into": true,
+          "never_return": false
+        },
+        "disambiguation_opt_out": false
+      },
+      {
+        "steps": [
+          {
+            "step": "step_547",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "Quantum logic gates are operations that change the state of qubits in quantum computers. Examples include the X gate (NOT gate), Z gate, and Hadamard gate, each performing specific transformations like rotations on the Bloch sphere."
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "end_action"
+            },
+            "variable": "step_547"
+          }
+        ],
+        "title": "What are quantum logic gates and their roles in quantum computin",
+        "action": "action_39446",
+        "boosts": [],
+        "handlers": [],
+        "condition": {
+          "intent": "action_39446_intent_31864"
+        },
+        "variables": [
+          {
+            "title": "Quantum logic gates are operations that change the state of qubi",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_547",
+            "data_type": "any"
+          }
+        ],
+        "launch_mode": "learning",
+        "next_action": "action_1448",
+        "topic_switch": {
+          "allowed_from": true,
+          "allowed_into": true,
+          "never_return": false
+        },
+        "disambiguation_opt_out": false
+      },
+      {
+        "steps": [
+          {
+            "step": "step_515",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "Quantum computing, still in early stages, promises significant computational power, potentially surpassing classical computing by enabling a quantum computer with enough perfect qubits to access a workspace larger than what could be achieved with classical bits encoded in the atoms of the universe."
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "end_action"
+            },
+            "variable": "step_515"
+          }
+        ],
+        "title": "What are the implications of quantum computing as it develops?",
+        "action": "action_4212",
+        "boosts": [],
+        "handlers": [],
+        "condition": {
+          "intent": "action_4212_intent_2647"
+        },
+        "variables": [
+          {
+            "title": "Quantum computing, still in early stages, promises significant c",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_515",
+            "data_type": "any"
+          }
+        ],
+        "launch_mode": "learning",
+        "next_action": "action_2523",
+        "topic_switch": {
+          "allowed_from": true,
+          "allowed_into": true,
+          "never_return": false
+        },
+        "disambiguation_opt_out": false
+      },
+      {
+        "steps": [
+          {
+            "step": "step_735",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "Qubits can be created through various methods, including utilizing different energy levels of an electron, perpendicular polarizations of a photon, or the spin of an electron relative to a magnetic field."
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "continue"
+            },
+            "variable": "step_735"
+          }
+        ],
+        "title": "What methods are used to create qubits?",
+        "action": "action_2523",
+        "boosts": [],
+        "handlers": [],
+        "condition": {
+          "intent": "action_2523_intent_33425"
+        },
+        "variables": [
+          {
+            "title": "Qubits can be created through various methods, including utilizi",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_735",
+            "data_type": "any"
+          }
+        ],
+        "launch_mode": "learning",
+        "next_action": "action_2267",
+        "topic_switch": {
+          "allowed_from": true,
+          "allowed_into": true,
+          "never_return": false
+        },
+        "disambiguation_opt_out": false
+      },
+      {
+        "steps": [
+          {
+            "step": "step_991",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "Quantum probability and distribution are demonstrated for calculating outcomes from qubit superposition and entanglement.\n\nQuantum gates manipulate qubits for parallel computing, exploiting superposition and entanglement.\n\nSuperposition enables quantum computers to explore multiple states at once, with measurements providing results.\n\nQuantum probabilities aid decision-"
+                          },
+                          {
+                            "scalar": "making by evaluating multiple outcomes simultaneously.\nEntanglement and superposition create parallel probabilistic realities, revolutionizing problem-solving."
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "end_action"
+            },
+            "variable": "step_991"
+          }
+        ],
+        "title": "Key Points To Remember",
+        "action": "action_13035",
+        "boosts": [],
+        "handlers": [],
+        "condition": {
+          "intent": "action_13035_intent_45159"
+        },
+        "variables": [
+          {
+            "title": "Quantum probability and distribution are demonstrated for calcul",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_991",
+            "data_type": "any"
+          }
+        ],
+        "launch_mode": "learning",
+        "next_action": "action_28423",
+        "topic_switch": {
+          "allowed_from": true,
+          "allowed_into": true,
+          "never_return": false
+        },
+        "disambiguation_opt_out": false
+      },
+      {
+        "steps": [
+          {
+            "step": "step_338",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "We now know that quantum computers have the potential to boost the performance of machine learning systems, and may eventually power efforts in fields from drug discovery to fraud detection. We're doing foundational research in quantum ML to power tomorrow’s smart quantum algorithms.\n\n<br />\n\n\n\nMore information can be found:\n\nhttps://research.ibm.com/topics/quantum-machine-learning"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "end_action"
+            },
+            "variable": "step_338"
+          }
+        ],
+        "title": "Quantum Machine Learning",
+        "action": "action_18373",
+        "boosts": [],
+        "handlers": [],
+        "condition": {
+          "intent": "action_18373_intent_40954"
+        },
+        "variables": [
+          {
+            "title": "We now know that quantum computers have the potential to boost t",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_338",
+            "data_type": "any"
+          }
+        ],
+        "launch_mode": "learning",
+        "next_action": "action_30251",
+        "topic_switch": {
+          "allowed_from": true,
+          "allowed_into": true,
+          "never_return": false
+        },
+        "disambiguation_opt_out": false
+      }
+    ],
+    "intents": [
+      {
+        "intent": "action_4236_intent_8067",
+        "examples": [
+          {
+            "text": "Why quantum computers are faster"
+          },
+          {
+            "text": "How does quantum computing contribute to reducing the time and cost of scientific research?"
+          },
+          {
+            "text": "Can you explain why quantum computers perform better in complex simulations than classical computers?"
+          },
+          {
+            "text": "How do quantum computers handle the permutations of molecular behavior differently from classical computers?"
+          },
+          {
+            "text": "Can you give examples of complex problems that quantum computing can solve more efficiently?"
+          },
+          {
+            "text": "Why are classical computers limited in their ability to simulate molecular behavior?"
+          },
+          {
+            "text": "How do quantum computers create multidimensional computational spaces for problem-solving?"
+          },
+          {
+            "text": "What makes quantum algorithms more efficient for chemical simulations?"
+          }
+        ]
+      },
+      {
+        "intent": "action_39561_intent_48680",
+        "examples": [
+          {
+            "text": "How does the parity strategy work in practice?"
+          }
+        ]
+      },
+      {
+        "intent": "action_25305_intent_46035",
+        "examples": [
+          {
+            "text": "What is the Four-Square Chessboard Enigma?"
+          }
+        ]
+      },
+      {
+        "intent": "action_40418_intent_45218",
+        "examples": [
+          {
+            "text": "Can you explain why quantum computers are necessary for modern computing challenges?"
+          },
+          {
+            "text": "How do quantum computers differ from classical supercomputers in solving problems?"
+          },
+          {
+            "text": "Could you give examples of problems that only quantum computers can solve effectively?"
+          },
+          {
+            "text": "Why do we need quantum computers?"
+          },
+          {
+            "text": "What types of complex problems are beyond the reach of current supercomputers?"
+          }
+        ]
+      },
+      {
+        "intent": "action_18373_intent_40954",
+        "examples": [
+          {
+            "text": "How does quantum machine learning leverage the properties of quantum mechanics?"
+          },
+          {
+            "text": "Can quantum machine learning algorithms process information more efficiently?"
+          },
+          {
+            "text": "What role does quantum machine learning play in the future of computing?"
+          },
+          {
+            "text": "How far are we from seeing practical applications of quantum machine learning?"
+          },
+          {
+            "text": "What are the key research areas in quantum machine learning right now?"
+          },
+          {
+            "text": "What challenges are there in applying quantum computing to machine learning?"
+          },
+          {
+            "text": "Can you explain how quantum computing enhances machine learning systems?"
+          },
+          {
+            "text": "What advancements can we expect in machine learning algorithms from quantum computing?"
+          },
+          {
+            "text": "What are the current applications of quantum machine learning in drug discovery?"
+          },
+          {
+            "text": "Could you provide an overview of foundational research in quantum machine learning?"
+          },
+          {
+            "text": "Quantum Machine Learning"
+          },
+          {
+            "text": "How do quantum algorithms improve the capabilities of machine learning models?"
+          },
+          {
+            "text": "Can you discuss the potential impact of quantum machine learning on artificial intelligence?"
+          },
+          {
+            "text": "What fields are most likely to benefit from quantum machine learning in the near future?"
+          },
+          {
+            "text": "How are researchers integrating quantum computing with machine learning techniques?"
+          },
+          {
+            "text": "What makes quantum machine learning different from classical machine learning approaches?"
+          },
+          {
+            "text": "Could you give examples of smart quantum algorithms being developed for machine learning?"
+          }
+        ]
+      },
+      {
+        "intent": "action_36321_intent_28293",
+        "examples": [
+          {
+            "text": "What approach is being taken to advance quantum computing technologies?"
+          }
+        ]
+      },
+      {
+        "intent": "action_4212_intent_2647",
+        "examples": [
+          {
+            "text": "What are the potential breakthroughs in technology and science with the development of quantum computing?"
+          },
+          {
+            "text": "\"How might quantum computing affect industries like cybersecurity, finance, and pharmaceuticals?"
+          },
+          {
+            "text": "What are the implications of quantum computing as it develops?"
+          },
+          {
+            "text": "Can you explain how quantum computing could surpass classical computing in terms of computational power?"
+          }
+        ]
+      },
+      {
+        "intent": "action_33156_intent_11786",
+        "examples": [
+          {
+            "text": "What collaborations are underway to accelerate discoveries in quantum chemistry?"
+          },
+          {
+            "text": "How far are we from seeing practical applications of quantum computing in chemistry?"
+          },
+          {
+            "text": "What are the challenges in applying quantum computing to chemistry research?"
+          },
+          {
+            "text": "How does the study of quantum algorithms advance our understanding of chemistry?"
+          },
+          {
+            "text": "Can you describe the role of quantum computing in materials science?"
+          },
+          {
+            "text": "What impact will quantum computing have on the pharmaceutical industry?"
+          },
+          {
+            "text": "Quantum Chemistry"
+          },
+          {
+            "text": "Could you provide examples of quantum algorithms designed for chemical research?"
+          },
+          {
+            "text": "How does quantum computing assist in the discovery of new materials and medicines?"
+          },
+          {
+            "text": "What are the current limitations of supercomputers in modeling molecular structures that quantum computing can overcome?"
+          },
+          {
+            "text": "Can you explain how quantum computing is transforming the field of chemistry?"
+          },
+          {
+            "text": "How are researchers using quantum computing to model complex chemical reactions?"
+          },
+          {
+            "text": "What advancements in quantum chemistry can we expect in the near future?"
+          },
+          {
+            "text": "How is quantum computing expected to change the curriculum for chemistry students?"
+          },
+          {
+            "text": "What are the potential benefits of quantum computing for the field of environmental chemistry?"
+          },
+          {
+            "text": "What partnerships are critical for advancing the field of quantum chemistry?"
+          },
+          {
+            "text": "How does quantum computing enable the study of molecules in full complexity?"
+          },
+          {
+            "text": "What are the educational paths for someone interested in quantum chemistry?"
+          },
+          {
+            "text": "Can you discuss any breakthroughs in quantum chemistry achieved with quantum computing?"
+          },
+          {
+            "text": "How does quantum computing contribute to sustainability through chemistry?"
+          }
+        ]
+      },
+      {
+        "intent": "action_39446_intent_31864",
+        "examples": [
+          {
+            "text": "How are quantum logic gates implemented in physical quantum computing systems?"
+          },
+          {
+            "text": "Can you provide insights into ongoing research and innovations in quantum logic gate technology?"
+          },
+          {
+            "text": "What are some common examples of quantum logic gates and their functions?"
+          },
+          {
+            "text": "Can you describe how the Hadamard gate transforms qubit states?"
+          },
+          {
+            "text": "How does the Z gate differ from the X gate in its operation on qubits?"
+          },
+          {
+            "text": "What is the role of the X gate in quantum computations?"
+          },
+          {
+            "text": "Can you explain the basic concept of quantum logic gates in quantum computing?"
+          },
+          {
+            "text": "What are quantum logic gates and their roles in quantum computing?"
+          }
+        ]
+      },
+      {
+        "intent": "action_22794_intent_44677",
+        "examples": [
+          {
+            "text": "What are the possibilities for quantum computing in optimizing complex systems?"
+          },
+          {
+            "text": "What potential applications do quantum computers have?"
+          },
+          {
+            "text": "What role might quantum computing play in the future?"
+          },
+          {
+            "text": "Can you provide examples of complex systems that could be optimized by quantum computing?"
+          },
+          {
+            "text": "What advancements in quantum computing are currently being explored?"
+          }
+        ]
+      },
+      {
+        "intent": "action_46947_intent_33570",
+        "examples": [
+          {
+            "text": "What question should you ask to find the treasure?"
+          }
+        ]
+      },
+      {
+        "intent": "action_16285_intent_12620",
+        "examples": [
+          {
+            "text": "Can the strategy for the Four-Square Chessboard Enigma be scaled?"
+          }
+        ]
+      },
+      {
+        "intent": "action_18931_intent_42739",
+        "examples": [
+          {
+            "text": "What does quantum computing reveal about the Monty Hall Problem?"
+          }
+        ]
+      },
+      {
+        "intent": "action_35387_intent_38318",
+        "examples": [
+          {
+            "text": "How is the Monty Hall Problem modeled on a quantum computer?"
+          }
+        ]
+      },
+      {
+        "intent": "action_36338_intent_10557",
+        "examples": [
+          {
+            "text": "Appreciate it"
+          },
+          {
+            "text": "Thank you"
+          },
+          {
+            "text": "Thanks a ton"
+          },
+          {
+            "text": "Thank you very much"
+          },
+          {
+            "text": "Thanks"
+          },
+          {
+            "text": "Ok thanks"
+          }
+        ]
+      },
+      {
+        "intent": "fallback_connect_to_agent",
+        "examples": [
+          {
+            "text": "Call agent"
+          },
+          {
+            "text": "Agent help"
+          },
+          {
+            "text": "I would like to speak to a human"
+          },
+          {
+            "text": "Can I connect to an agent?"
+          },
+          {
+            "text": "I would like to speak to someone"
+          }
+        ],
+        "description": "Please transfer me to an agent"
+      },
+      {
+        "intent": "action_28423_intent_5696",
+        "examples": [
+          {
+            "text": "Why does switching safes work in your favor?"
+          }
+        ]
+      },
+      {
+        "intent": "action_9704_intent_3491",
+        "examples": [
+          {
+            "text": "What is the Treasure Door Enigma?"
+          }
+        ]
+      },
+      {
+        "intent": "action_25015_intent_33134",
+        "examples": [
+          {
+            "text": "How does quantum computing parallelism apply to solving the enigma?"
+          }
+        ]
+      },
+      {
+        "intent": "action_11999_intent_13884",
+        "examples": [
+          {
+            "text": "How will the integration of classical and quantum computing enhance computational capabilities?"
+          },
+          {
+            "text": "What does the convergence of quantum computing and AI mean for technological advancement?"
+          },
+          {
+            "text": "Can you elaborate on how quantum computing will revolutionize problem-solving in the future?"
+          },
+          {
+            "text": "What is the vision for quantum computing's role in problem-solving?"
+          }
+        ]
+      },
+      {
+        "intent": "action_13035_intent_45159",
+        "examples": [
+          {
+            "text": "In what ways does superposition enable quantum computers to explore multiple states simultaneously?"
+          },
+          {
+            "text": "Can you describe how entanglement and superposition contribute to creating parallel probabilistic realities?"
+          },
+          {
+            "text": "How do quantum gates manipulate qubits for parallel computing?"
+          },
+          {
+            "text": "How does quantum probability assist in decision-making processes by evaluating multiple outcomes at once?"
+          },
+          {
+            "text": "Can you explain how quantum probability and distribution calculate outcomes from qubit superposition and entanglement?"
+          }
+        ]
+      },
+      {
+        "intent": "action_36160_intent_10787",
+        "examples": [
+          {
+            "text": "What strategy increases your chances of finding the diamond?"
+          }
+        ]
+      },
+      {
+        "intent": "action_15072_intent_21408",
+        "examples": [
+          {
+            "text": "How do the Quantum Computing Virtual Labs help in understanding quantum algorithms?"
+          },
+          {
+            "text": "Can you recommend specific virtual lab exercises for beginners in quantum computing?"
+          },
+          {
+            "text": "What projects can I work on within the Quantum Computing Virtual Labs?"
+          },
+          {
+            "text": "Are there any certifications or credentials I can earn through the Quantum Computing Virtual Labs?"
+          },
+          {
+            "text": "What are the benefits of using virtual labs for learning quantum computing?"
+          },
+          {
+            "text": "Can you explain how to set up an experiment in the Quantum Computing Virtual Labs?"
+          },
+          {
+            "text": "What tools and software are used in the Quantum Computing Virtual Labs for quantum programming?"
+          },
+          {
+            "text": "Quantum Computing Virtual Labs"
+          },
+          {
+            "text": "How can I access the IBM Quantum Computing Virtual Labs?"
+          },
+          {
+            "text": "What learning materials are available in the Quantum Computing Virtual Labs?"
+          },
+          {
+            "text": "Can you provide a guide on starting with quantum computing using the virtual labs?"
+          },
+          {
+            "text": "What are the prerequisites for using the IBM Quantum Computing Virtual Labs?"
+          }
+        ]
+      },
+      {
+        "intent": "action_36082_intent_42464",
+        "examples": [
+          {
+            "text": "Can you describe the types of events the quantum community participates in?"
+          },
+          {
+            "text": "How do I access the educational materials offered to the quantum community?"
+          },
+          {
+            "text": "What opportunities are there for networking within the quantum computing community?"
+          },
+          {
+            "text": "Can you explain the role of the quantum community in advancing quantum technology?"
+          },
+          {
+            "text": "What forums or platforms does the quantum community use for collaboration?"
+          },
+          {
+            "text": "How can educators and students get involved in the quantum community?"
+          },
+          {
+            "text": "What are the latest achievements of the quantum computing community?"
+          },
+          {
+            "text": "How does the quantum community collaborate on research and development?"
+          },
+          {
+            "text": "Can you provide examples of projects developed using Qiskit?"
+          },
+          {
+            "text": "What are the benefits of joining the quantum developer community?"
+          },
+          {
+            "text": "How does IBM support the growth of the quantum computing community?"
+          },
+          {
+            "text": "What resources are available for beginners in quantum computing in your community?"
+          },
+          {
+            "text": "How can developers contribute to the Qiskit open-source SDK?"
+          },
+          {
+            "text": "How can I start learning about quantum computing through your educational offerings?"
+          },
+          {
+            "text": "What open-source tools does IBM offer for quantum computing development?"
+          },
+          {
+            "text": "Can you tell me more about the quantum computing community and how to join?"
+          },
+          {
+            "text": "Quantum Community"
+          },
+          {
+            "text": "How does the quantum community address the educational gap in quantum computing?"
+          },
+          {
+            "text": "How does IBM facilitate knowledge sharing within the quantum community?"
+          },
+          {
+            "text": "What impact has the quantum community had on the field of quantum computing?"
+          }
+        ]
+      },
+      {
+        "intent": "action_33746_intent_25612",
+        "examples": [
+          {
+            "text": "What IBM do in terms of quantum computer"
+          },
+          {
+            "text": "Making quantum computers useful"
+          },
+          {
+            "text": "Can you explain IBM Quantum's roadmap for scaling quantum processors?"
+          }
+        ]
+      },
+      {
+        "intent": "action_37259_intent_17946",
+        "examples": [
+          {
+            "text": "How is the quantum computing community expected to grow?"
+          }
+        ]
+      },
+      {
+        "intent": "action_47712_intent_34594",
+        "examples": [
+          {
+            "text": "Just having a look around"
+          },
+          {
+            "text": "I'm just poking around"
+          },
+          {
+            "text": "Browsing first"
+          },
+          {
+            "text": "I'm just looking for now"
+          },
+          {
+            "text": "Looking through my options for now"
+          },
+          {
+            "text": "Just Looking"
+          }
+        ]
+      },
+      {
+        "intent": "action_1448_intent_41108",
+        "examples": [
+          {
+            "text": "How can a qubit's state be measured?"
+          },
+          {
+            "text": "Can you explain the process of measuring a qubit's state in quantum computing?"
+          },
+          {
+            "text": "What does it mean to observe a qubit, and how does this affect its state?"
+          },
+          {
+            "text": "Can you describe the technical methods used to observe and measure qubits?"
+          },
+          {
+            "text": "What tools or devices are commonly used in the measurement of qubits?"
+          },
+          {
+            "text": "What are the challenges in accurately measuring the state of a qubit?"
+          },
+          {
+            "text": "How do researchers interpret the results of a qubit measurement?"
+          },
+          {
+            "text": "Can you explain the concept of quantum decoherence in relation to qubit measurement?"
+          }
+        ]
+      },
+      {
+        "intent": "action_39936_intent_6861",
+        "examples": [
+          {
+            "text": "What role do superconductors play in the functionality of quantum computers?"
+          },
+          {
+            "text": "Can you explain the process of preparing a quantum circuit for computation?"
+          },
+          {
+            "text": "What is the significance of absolute zero temperature in quantum computing?"
+          },
+          {
+            "text": "How do superconducting qubits maintain their quantum states?"
+          },
+          {
+            "text": "Can you explain how quantum computers read out quantum information?"
+          },
+          {
+            "text": "What are the practical applications of quantum computing enabled by these principles?"
+          },
+          {
+            "text": "How are microwave photons used to manipulate qubits?"
+          },
+          {
+            "text": "What are Cooper pairs and why are they significant in quantum computing?"
+          },
+          {
+            "text": "Can you discuss the multidimensional computational spaces created by qubits?"
+          },
+          {
+            "text": "What are the challenges in keeping quantum processors supercooled?"
+          },
+          {
+            "text": "How does interference work in the context of quantum computing?"
+          },
+          {
+            "text": "What is quantum entanglement and how does it impact quantum computation?"
+          },
+          {
+            "text": "Can you explain the concept of superposition in quantum computing?"
+          },
+          {
+            "text": "How do quantum computers control the behavior of qubits?"
+          },
+          {
+            "text": "What is a Josephson junction and how does it contribute to quantum computing?"
+          },
+          {
+            "text": "Can you describe the process of quantum tunneling and its importance in quantum computing?"
+          },
+          {
+            "text": "How does a quantum computer achieve and maintain its operational temperature?"
+          },
+          {
+            "text": "Can you explain how quantum computers use qubits for computation?"
+          },
+          {
+            "text": "How do quantum computers work?"
+          }
+        ]
+      },
+      {
+        "intent": "action_22126_intent_13092",
+        "examples": [
+          {
+            "text": "What strategy is suggested to solve the enigma?"
+          }
+        ]
+      },
+      {
+        "intent": "action_47999_intent_15961",
+        "examples": [
+          {
+            "text": "What is quantum computing?"
+          },
+          {
+            "text": "What makes quantum computing so powerful compared to traditional computers?"
+          },
+          {
+            "text": "Can you give me a simple explanation of what quantum computing is and how it works?"
+          },
+          {
+            "text": "How does IBM Quantum's approach to quantum computing differ from other players in the field?"
+          },
+          {
+            "text": "What advancements has IBM Quantum made in making quantum computing more powerful and accessible?"
+          },
+          {
+            "text": "How accessible is quantum computing today for developers and researchers?"
+          },
+          {
+            "text": "What are the challenges in developing quantum computing technology and how is IBM addressing them?"
+          },
+          {
+            "text": "How is quantum computing expected to change the world, according to current research and developments?"
+          },
+          {
+            "text": "I'm curious about IBM Quantum's role in the development of quantum computing. Can you share more?"
+          },
+          {
+            "text": "Could you explain the principles of quantum mechanics that quantum computing utilizes?"
+          }
+        ]
+      },
+      {
+        "intent": "action_35041_intent_29237",
+        "examples": [
+          {
+            "text": "How does quantum computing enhance the solution strategy for this enigma?"
+          }
+        ]
+      },
+      {
+        "intent": "action_15397_intent_47538",
+        "examples": [
+          {
+            "text": "What advancements are highlighted in the future of quantum computing?"
+          }
+        ]
+      },
+      {
+        "intent": "action_38156_intent_10222",
+        "examples": [
+          {
+            "text": "What role does Quantum Information Science play in solving complex problems?"
+          },
+          {
+            "text": "How is IBM contributing to the research in Quantum Information Science?"
+          },
+          {
+            "text": "Can you elaborate on the importance of entanglement and superposition in quantum computing?"
+          },
+          {
+            "text": "Can you discuss any open problems in Quantum Information Science that researchers are currently focusing on?"
+          },
+          {
+            "text": "How does Quantum Information Science impact the development of quantum computing?"
+          },
+          {
+            "text": "Can you explain what Quantum Information Science entails?"
+          },
+          {
+            "text": "Quantum Information Science"
+          },
+          {
+            "text": "What are the key concepts of Quantum Information Science I should know about?"
+          },
+          {
+            "text": "What are the global implications of advancements in Quantum Information Science?"
+          },
+          {
+            "text": "How do quantum communications benefit from Quantum Information Science?"
+          },
+          {
+            "text": "What are the foundational theories behind Quantum Information Science that I should study?"
+          },
+          {
+            "text": "Can you discuss the potential impacts of Quantum Information Science on cybersecurity?"
+          },
+          {
+            "text": "What educational resources would you recommend for someone interested in Quantum Information Science?"
+          },
+          {
+            "text": "How does Quantum Information Science differ from classical information science?"
+          },
+          {
+            "text": "What challenges are researchers facing in Quantum Information Science?"
+          },
+          {
+            "text": "Can you provide examples of practical applications emerging from Quantum Information Science?"
+          },
+          {
+            "text": "How do the fundamentals of quantum science influence the future of technology?"
+          },
+          {
+            "text": "What are the latest breakthroughs in Quantum Information Science at IBM?"
+          },
+          {
+            "text": "How does understanding Quantum Information Science help in creating more efficient quantum computers?"
+          },
+          {
+            "text": "Could you describe some novel quantum algorithms being developed through Quantum Information Science?"
+          }
+        ]
+      },
+      {
+        "intent": "action_44815_intent_17376",
+        "examples": [
+          {
+            "text": "What future battery technologies could emerge from quantum computing research?"
+          },
+          {
+            "text": "How could quantum computing impact the development of new batteries?"
+          },
+          {
+            "text": "How is quantum computing expected to transform battery technology for electric vehicles?"
+          },
+          {
+            "text": "Can you explain how quantum computing aids in discovering new battery materials?"
+          },
+          {
+            "text": "What advancements in renewable energy storage can we anticipate from quantum computing?"
+          },
+          {
+            "text": "How might quantum computing accelerate the development of more efficient batteries?"
+          },
+          {
+            "text": "In what ways does simulating chemical reactions with quantum computing benefit battery design?"
+          },
+          {
+            "text": "Could you describe the process of using quantum computing for battery material discovery?"
+          },
+          {
+            "text": "What are the potential impacts of quantum computing on the future of battery power?"
+          },
+          {
+            "text": "How can quantum computing contribute to solving the limitations of current battery technologies?"
+          },
+          {
+            "text": "Can quantum computing provide solutions for faster charging and longer-lasting batteries?"
+          },
+          {
+            "text": "What breakthroughs in battery technology for electric vehicles are expected through quantum computing?"
+          },
+          {
+            "text": "How does analyzing complex chemical reactions with quantum computing improve battery efficiency?"
+          },
+          {
+            "text": "What role does quantum computing play in the search for sustainable battery materials?"
+          },
+          {
+            "text": "How might quantum computing influence the cost and production of next-generation batteries?"
+          },
+          {
+            "text": "Can you give examples of how quantum computing is being used in current battery research?"
+          },
+          {
+            "text": "What challenges in battery development can quantum computing help overcome?"
+          },
+          {
+            "text": "How are researchers using quantum computing to enhance battery capacity and lifecycle?"
+          },
+          {
+            "text": "In terms of battery technology, what unique insights does quantum computing offer?"
+          },
+          {
+            "text": "How far are we from seeing practical battery innovations resulting from quantum computing?"
+          },
+          {
+            "text": "What specific problems in battery science can quantum computing help solve?"
+          },
+          {
+            "text": "How does quantum computing assist in the development of batteries for high-demand applications?"
+          },
+          {
+            "text": "Can quantum computing lead to the creation of environmentally friendly battery solutions?"
+          },
+          {
+            "text": "What are the implications of quantum computing for the safety and stability of batteries?"
+          },
+          {
+            "text": "How does quantum computing enable the exploration of alternative energy storage methods?"
+          },
+          {
+            "text": "Could quantum computing help in reducing the environmental impact of battery production?"
+          },
+          {
+            "text": "What steps are involved in using quantum computing to simulate battery chemical reactions?"
+          },
+          {
+            "text": "How will quantum computing affect the speed of innovation in battery technologies?"
+          },
+          {
+            "text": "What are the barriers to using quantum computing in battery material research?"
+          },
+          {
+            "text": "Can quantum computing make batteries for renewable energy storage more viable?"
+          },
+          {
+            "text": "How do quantum computers model the electrochemical processes in batteries differently?"
+          }
+        ]
+      },
+      {
+        "intent": "action_20488_intent_23377",
+        "examples": [
+          {
+            "text": "How is The Four Hair Color Enigma represented on a quantum computer?"
+          }
+        ]
+      },
+      {
+        "intent": "action_23244_intent_21909",
+        "examples": [
+          {
+            "text": "Can you explain the concept of a qubit in simple terms?"
+          },
+          {
+            "text": "How do qubits contribute to the computational power of quantum computers?"
+          },
+          {
+            "text": "What makes a qubit different from a traditional binary bit?"
+          },
+          {
+            "text": "Could you provide more detail on how a qubit operates within a quantum computer?"
+          },
+          {
+            "text": "What are the practical implications of a qubit being in both 0 and 1 states?"
+          },
+          {
+            "text": "What is a qubit?"
+          }
+        ]
+      },
+      {
+        "intent": "action_35734_intent_5442",
+        "examples": [
+          {
+            "text": "How is quantum science being applied to improve quantum processors?"
+          },
+          {
+            "text": "What role does software play in optimizing the performance of quantum hardware?"
+          },
+          {
+            "text": "How is IBM Quantum contributing to the global quantum computing ecosystem through hardware development?"
+          },
+          {
+            "text": "Can you explain what sets IBM's superconducting quantum processors apart?"
+          },
+          {
+            "text": "How does systems engineering contribute to the development of quantum hardware?"
+          },
+          {
+            "text": "What does practical quantum advantage mean in terms of quantum hardware?"
+          },
+          {
+            "text": "What are the challenges in integrating quantum processors with classical computing workflows?"
+          },
+          {
+            "text": "Could you describe the role of cryogenic engineering in quantum computing?"
+          },
+          {
+            "text": "Can you provide insights into the future trends in quantum hardware research and development?"
+          },
+          {
+            "text": "Quantum Hardware"
+          },
+          {
+            "text": "Can you provide examples of state-of-the-art advancements in quantum hardware?"
+          },
+          {
+            "text": "What is the significance of industrial design in the development of quantum computing systems?"
+          },
+          {
+            "text": "How far are we from seeing quantum hardware being used in everyday applications?"
+          },
+          {
+            "text": "What are the key components of a superconducting quantum processor?"
+          },
+          {
+            "text": "What are the latest breakthroughs in quantum hardware from IBM Quantum?"
+          }
+        ]
+      },
+      {
+        "intent": "action_17957_intent_34989",
+        "examples": [
+          {
+            "text": "What is the Monty Hall Problem?"
+          }
+        ]
+      },
+      {
+        "intent": "action_9093_intent_6702",
+        "examples": [
+          {
+            "text": "How can quantum computing improve our response to market volatility?"
+          },
+          {
+            "text": "Can you discuss any successful case studies of quantum computing in finance?"
+          },
+          {
+            "text": "What partnerships are critical for driving innovation in quantum finance?"
+          },
+          {
+            "text": "Can you describe the potential impact of quantum computing on portfolio optimization?"
+          },
+          {
+            "text": "What are the implications of quantum computing for high-frequency trading?"
+          },
+          {
+            "text": "How does quantum computing assist in risk assessment and management in finance?"
+          },
+          {
+            "text": "Can quantum computing contribute to more accurate and faster financial forecasting?"
+          },
+          {
+            "text": "What are the challenges in applying quantum computing to finance?"
+          },
+          {
+            "text": "How far are we from seeing practical applications of quantum computing in financial analysis?"
+          },
+          {
+            "text": "What advancements in quantum finance are currently being developed?"
+          },
+          {
+            "text": "Could you give examples of how quantum computing serves unmet needs in finance?"
+          },
+          {
+            "text": "What role do quantum algorithms play in identifying dynamic arbitrage opportunities?"
+          },
+          {
+            "text": "Can you explain the types of complex data patterns quantum computing can reveal in finance?"
+          },
+          {
+            "text": "How is quantum computing set to revolutionize the financial industry?"
+          },
+          {
+            "text": "Quantum Finance"
+          }
+        ]
+      },
+      {
+        "intent": "action_40479_intent_20897",
+        "examples": [
+          {
+            "text": "How does the development of quantum software interact with quantum hardware advancements?"
+          },
+          {
+            "text": "Can you explain the role of quantum circuits in achieving quantum advantage?"
+          },
+          {
+            "text": "Quantum Circuits and Software"
+          },
+          {
+            "text": "What measures are in place to ensure the reliability and accuracy of quantum software?"
+          },
+          {
+            "text": "What are the benefits of open-source tools in the development of quantum software?"
+          },
+          {
+            "text": "What opportunities are there for developers interested in specializing in quantum software?"
+          },
+          {
+            "text": "How does IBM support the development of quantum software by external developers?"
+          },
+          {
+            "text": "What are the key components of the quantum software stack?"
+          },
+          {
+            "text": "What advancements have been made in quantum software programming tools?"
+          },
+          {
+            "text": "What resources are available for beginners interested in quantum software development?"
+          },
+          {
+            "text": "Can you provide examples of how quantum software can be applied in real-world scenarios?"
+          },
+          {
+            "text": "What are the challenges in creating software for quantum computers?"
+          },
+          {
+            "text": "How are quantum circuits designed and tested for quantum computing?"
+          },
+          {
+            "text": "Could you describe the library of quantum circuits IBM is developing?"
+          },
+          {
+            "text": "What programming tools are available for developing quantum software?"
+          }
+        ]
+      },
+      {
+        "intent": "action_2267_intent_28776",
+        "examples": [
+          {
+            "text": "How does entanglement work in quantum computing?"
+          }
+        ]
+      },
+      {
+        "intent": "action_15417_intent_49016",
+        "examples": [
+          {
+            "text": "Could you describe how a qubit can be both 0 and 1 at the same time?"
+          },
+          {
+            "text": "How is information encoded differently in quantum computers compared to classical computers?"
+          },
+          {
+            "text": "Can you explain the basic difference between bits in classical computing and qubits in quantum computing?"
+          },
+          {
+            "text": "How does the superposition of qubits change the way information is processed?"
+          },
+          {
+            "text": "What advantages does the quantum state of superposition offer over traditional binary encoding?"
+          },
+          {
+            "text": "What implications does qubit superposition have for computational speed and power?"
+          },
+          {
+            "text": "How do quantum computers encode and manipulate complex information using qubits?"
+          },
+          {
+            "text": "Can you provide examples of tasks that benefit from qubits' ability to encode information in superposition?"
+          },
+          {
+            "text": "How do the properties of qubits facilitate the exploration of new computational theories?"
+          }
+        ]
+      },
+      {
+        "intent": "action_44757_intent_6552",
+        "examples": [
+          {
+            "text": "What are the possible outcomes of the quantum model for this enigma?"
+          }
+        ]
+      },
+      {
+        "intent": "action_6143_intent_5661",
+        "examples": [
+          {
+            "text": "How is this enigma modeled on a quantum computer?"
+          }
+        ]
+      },
+      {
+        "intent": "action_24879_intent_49957",
+        "examples": [
+          {
+            "text": "What are the possible outcomes in the quantum model of the enigma?"
+          }
+        ]
+      },
+      {
+        "intent": "action_46359_intent_21334",
+        "examples": [
+          {
+            "text": "Can you explain the challenge of decoherence in maintaining qubit stability?"
+          },
+          {
+            "text": "How does qubit stability affect the reliability of quantum computations?"
+          },
+          {
+            "text": "What challenges are associated with quantum computing?"
+          },
+          {
+            "text": "How are algorithms being developed to leverage quantum computing's unique capabilities?"
+          }
+        ]
+      },
+      {
+        "intent": "action_22021_intent_34249",
+        "examples": [
+          {
+            "text": "What is the setup for The Four Hair Color Enigma?"
+          }
+        ]
+      },
+      {
+        "intent": "action_30801_intent_45074",
+        "examples": [
+          {
+            "text": "How is the Treasure Door Enigma represented on a quantum computer?"
+          }
+        ]
+      },
+      {
+        "intent": "action_2312_intent_2640",
+        "examples": [
+          {
+            "text": "How does the Bloch sphere help visualize a qubit's state in quantum computing?"
+          },
+          {
+            "text": "How is the Bloch sphere used to understand qubit manipulation and control?"
+          },
+          {
+            "text": "What insights into qubit behavior can we gain from the Bloch sphere representation?"
+          },
+          {
+            "text": "What is the Bloch sphere and how is it used in quantum computing?"
+          },
+          {
+            "text": "How does the Bloch sphere depict the relative phases between the states 0 and 1?"
+          },
+          {
+            "text": "Can you explain the concept of the Bloch sphere in simple terms?"
+          },
+          {
+            "text": "What do the X, Y, and Z axes represent on the Bloch sphere?"
+          }
+        ]
+      },
+      {
+        "intent": "action_2523_intent_33425",
+        "examples": [
+          {
+            "text": "Can you explain how electron energy levels are used to create qubits?"
+          },
+          {
+            "text": "What role do perpendicular polarizations of photons play in qubit creation?"
+          },
+          {
+            "text": "How is the spin of an electron relative to a magnetic field utilized to form qubits?"
+          },
+          {
+            "text": "Can you provide examples of materials and technologies used in the production of qubits?"
+          },
+          {
+            "text": "What methods are used to create qubits?"
+          }
+        ]
+      },
+      {
+        "intent": "action_34774_intent_34688",
+        "examples": [
+          {
+            "text": "Could you list the types of problems that only quantum computers can solve?"
+          },
+          {
+            "text": "I've heard quantum computers can solve complex problems faster; what are some examples?"
+          },
+          {
+            "text": "Can you provide examples of problems currently unsolvable that quantum computing will tackle?"
+          },
+          {
+            "text": "Can you explain what problems quantum computers are uniquely suited to solve?"
+          },
+          {
+            "text": "How do quantum computers solve problems differently from my laptop or smartphone?"
+          },
+          {
+            "text": "What are the unique capabilities of quantum computers in solving complex equations?"
+          },
+          {
+            "text": "In terms of optimization problems, what advantages do quantum computers offer?"
+          },
+          {
+            "text": "What unique problems are quantum computers expected to solve?"
+          }
+        ]
+      },
+      {
+        "intent": "action_3898_intent_14987",
+        "examples": [
+          {
+            "text": "I do not know what to ask"
+          },
+          {
+            "text": "I'd like to know what type of questions you can answer for me."
+          },
+          {
+            "text": "How do I use you?"
+          },
+          {
+            "text": "How can you solve my problems?"
+          },
+          {
+            "text": "How can you help me?"
+          },
+          {
+            "text": "How can you help me"
+          },
+          {
+            "text": "How can I use you?"
+          },
+          {
+            "text": "Hi, what do you do?"
+          },
+          {
+            "text": "Do you have a list of things I can talk to you about?"
+          },
+          {
+            "text": "Can you tell me what services you are able to help me with?"
+          },
+          {
+            "text": "Can you please give me a list of the types of things you can help me with?"
+          },
+          {
+            "text": "what questions can you answer"
+          },
+          {
+            "text": "See what questions I can answer"
+          },
+          {
+            "text": "Tell me about what kind of things you do?"
+          },
+          {
+            "text": "Tell me something"
+          },
+          {
+            "text": "What are my options that you can help with?"
+          },
+          {
+            "text": "What are you able to deal with?"
+          },
+          {
+            "text": "What are you able to understand?"
+          },
+          {
+            "text": "What are you capable of?"
+          },
+          {
+            "text": "What are you good at?"
+          },
+          {
+            "text": "What are your skills?"
+          },
+          {
+            "text": "What are you used for?"
+          },
+          {
+            "text": "What can I ask you to do?"
+          },
+          {
+            "text": "what can you do"
+          },
+          {
+            "text": "What can you do?"
+          },
+          {
+            "text": "What do you do?"
+          },
+          {
+            "text": "What do you handle?"
+          },
+          {
+            "text": "What else can you help me with?"
+          },
+          {
+            "text": "What features are in here?"
+          },
+          {
+            "text": "What is this 4?"
+          },
+          {
+            "text": "What kinds of things can you do?"
+          },
+          {
+            "text": "Is there anything you can help me with?"
+          }
+        ]
+      },
+      {
+        "intent": "action_32199_intent_47174",
+        "examples": [
+          {
+            "text": "How does quantum computing facilitate solving this puzzle?"
+          }
+        ]
+      },
+      {
+        "intent": "action_21080_intent_3044",
+        "examples": [
+          {
+            "text": "How can someone learn more about quantum programming?"
+          },
+          {
+            "text": "How can I test and improve my quantum logic skills through practical programming challenges?"
+          },
+          {
+            "text": "Are there any online courses or tutorials that offer practical challenges in quantum programming?"
+          },
+          {
+            "text": "What is the Institut quantique's Quantum enigmas series, and how can it help me learn quantum programming?"
+          },
+          {
+            "text": "Can you recommend any beginner-friendly resources for getting started with quantum programming?"
+          },
+          {
+            "text": "What platforms or tools are available for practicing quantum programming skills?"
+          },
+          {
+            "text": "Can you provide examples of practical quantum programming projects for beginners?"
+          }
+        ]
+      },
+      {
+        "intent": "action_36795_intent_48432",
+        "examples": [
+          {
+            "text": "What strategy is used to solve The Four Hair Color Enigma?"
+          }
+        ]
+      },
+      {
+        "intent": "action_14025_intent_38105",
+        "examples": [
+          {
+            "text": "How does the guardians' response help find the treasure?"
+          }
+        ]
+      },
+      {
+        "intent": "action_30251_intent_44166",
+        "examples": [
+          {
+            "text": "What role does quantum error correction play in the scalability of quantum computers?"
+          },
+          {
+            "text": "How do error correction techniques impact the performance of quantum algorithms?"
+          },
+          {
+            "text": "What advancements has IBM made in the field of quantum error correction?"
+          },
+          {
+            "text": "How far are we from realizing error-corrected quantum systems in practical applications?"
+          },
+          {
+            "text": "Can you give an overview of the bottom-up approaches to quantum error correction?"
+          },
+          {
+            "text": "What are the major challenges in implementing quantum error correction?"
+          },
+          {
+            "text": "How do error correction techniques enhance the reliability of quantum computations?"
+          },
+          {
+            "text": "What makes scalable, error-corrected quantum systems essential for quantum computing?"
+          },
+          {
+            "text": "What are the key strategies for error correction in quantum systems?"
+          },
+          {
+            "text": "Quantum Error Correction"
+          },
+          {
+            "text": "Can you explain the basics of quantum error correction?"
+          },
+          {
+            "text": "What are the implications of successful quantum error correction for future quantum technologies?"
+          },
+          {
+            "text": "How does error correction contribute to the goal of quantum advantage?"
+          },
+          {
+            "text": "What resources or research papers on quantum error correction do you recommend?"
+          },
+          {
+            "text": "What are the latest developments in quantum error correction algorithms?"
+          },
+          {
+            "text": "What is the significance of error correction in the context of quantum entanglement and communication?"
+          },
+          {
+            "text": "Can you discuss any collaborative efforts in the field of quantum error correction?"
+          },
+          {
+            "text": "Can you provide examples of successful error correction in quantum experiments?"
+          },
+          {
+            "text": "How does IBM's approach to quantum error correction differ from others in the field?"
+          },
+          {
+            "text": "Can you discuss the types of errors that occur in quantum computing and how they are corrected?"
+          }
+        ]
+      }
+    ],
+    "entities": [
+      {
+        "entity": "danger_words",
+        "values": [],
+        "fuzzy_match": false
+      },
+      {
+        "entity": "entity_9022",
+        "values": [
+          {
+            "type": "patterns",
+            "value": "Regular_expression",
+            "patterns": [
+              "\"^(?:.*[a-z])(?:.*[A-Z])(?:.*\\d)(?:.*[@$!%*?&])[A-Za-z\\d@$!%*?&]{8,}$\""
+            ]
+          }
+        ],
+        "fuzzy_match": true
+      },
+      {
+        "entity": "sys-date",
+        "values": []
+      },
+      {
+        "entity": "entity_12159",
+        "values": [
+          {
+            "type": "patterns",
+            "value": "Email",
+            "patterns": [
+              "\\b(?:[A-Za-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\\.[A-Za-z0-9!#$%&'*+/=?^_`{|}~-]+)*|\"(?:[\\x01-\\x08\\x0b\\x0c\\x0e-\\x1f\\x21\\x23-\\x5b\\x5d-\\x7f]|\\\\[\\x01-\\x09\\x0b\\x0c\\x0e-\\x7f])*\")@(?:(?:[A-Za-z0-9](?:[A-Za-z0-9-]*[A-Za-z0-9])?\\.)+[A-Za-z0-9](?:[A-Za-z0-9-]*[A-Za-z0-9])?|\\[(?:(?:(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9]))\\.){3}(?:(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9])|[A-Za-z0-9-]*[A-Za-z0-9]:(?:[\\x01-\\x08\\x0b\\x0c\\x0e-\\x1f\\x21-\\x5a\\x53-\\x7f]|\\\\[\\x01-\\x09\\x0b\\x0c\\x0e-\\x7f])+)\\])\\b"
+            ]
+          }
+        ],
+        "fuzzy_match": true
+      },
+      {
+        "entity": "entity_17115",
+        "values": [
+          {
+            "type": "patterns",
+            "value": "Email",
+            "patterns": [
+              "\\b(?:[A-Za-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\\.[A-Za-z0-9!#$%&'*+/=?^_`{|}~-]+)*|\"(?:[\\x01-\\x08\\x0b\\x0c\\x0e-\\x1f\\x21\\x23-\\x5b\\x5d-\\x7f]|\\\\[\\x01-\\x09\\x0b\\x0c\\x0e-\\x7f])*\")@(?:(?:[A-Za-z0-9](?:[A-Za-z0-9-]*[A-Za-z0-9])?\\.)+[A-Za-z0-9](?:[A-Za-z0-9-]*[A-Za-z0-9])?|\\[(?:(?:(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9]))\\.){3}(?:(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9])|[A-Za-z0-9-]*[A-Za-z0-9]:(?:[\\x01-\\x08\\x0b\\x0c\\x0e-\\x1f\\x21-\\x5a\\x53-\\x7f]|\\\\[\\x01-\\x09\\x0b\\x0c\\x0e-\\x7f])+)\\])\\b"
+            ]
+          }
+        ],
+        "fuzzy_match": true
+      },
+      {
+        "entity": "sys-currency",
+        "values": []
+      },
+      {
+        "entity": "sys-number",
+        "values": []
+      },
+      {
+        "entity": "sys-percentage",
+        "values": []
+      },
+      {
+        "entity": "entity_25899",
+        "values": [
+          {
+            "type": "patterns",
+            "value": "Email",
+            "patterns": [
+              "\\b(?:[A-Za-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\\.[A-Za-z0-9!#$%&'*+/=?^_`{|}~-]+)*|\"(?:[\\x01-\\x08\\x0b\\x0c\\x0e-\\x1f\\x21\\x23-\\x5b\\x5d-\\x7f]|\\\\[\\x01-\\x09\\x0b\\x0c\\x0e-\\x7f])*\")@(?:(?:[A-Za-z0-9](?:[A-Za-z0-9-]*[A-Za-z0-9])?\\.)+[A-Za-z0-9](?:[A-Za-z0-9-]*[A-Za-z0-9])?|\\[(?:(?:(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9]))\\.){3}(?:(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9])|[A-Za-z0-9-]*[A-Za-z0-9]:(?:[\\x01-\\x08\\x0b\\x0c\\x0e-\\x1f\\x21-\\x5a\\x53-\\x7f]|\\\\[\\x01-\\x09\\x0b\\x0c\\x0e-\\x7f])+)\\])\\b"
+            ]
+          }
+        ],
+        "fuzzy_match": true
+      },
+      {
+        "entity": "entity_25435",
+        "values": [
+          {
+            "type": "patterns",
+            "value": "Regular_expression",
+            "patterns": [
+              "\"^(?:.*[a-z])(?:.*[A-Z])(?:.*\\d)(?:.*[@$!%*?&])[A-Za-z\\d@$!%*?&]{8,}$\""
+            ]
+          }
+        ],
+        "fuzzy_match": true
+      },
+      {
+        "entity": "sys-time",
+        "values": []
+      },
+      {
+        "entity": "sys-yes-no",
+        "values": []
+      },
+      {
+        "entity": "profane_words",
+        "values": [],
+        "fuzzy_match": false
+      },
+      {
+        "entity": "entity_17250",
+        "values": [
+          {
+            "type": "patterns",
+            "value": "Regular_expression",
+            "patterns": [
+              "\"^(?:.*[a-z])(?:.*[A-Z])(?:.*\\d)(?:.*[@$!%*?&])[A-Za-z\\d@$!%*?&]{8,}$\""
+            ]
+          }
+        ],
+        "fuzzy_match": true
+      }
+    ],
+    "metadata": {
+      "api_version": {
+        "major_version": "v2",
+        "minor_version": "2018-11-08"
+      },
+      "skill": {
+        "counts": {
+          "actions": 61,
+          "intents": 58,
+          "entities": 14,
+          "data_types": 0,
+          "collections": 0,
+          "global_variables": 0
+        }
+      }
+    },
+    "variables": [],
+    "data_types": [],
+    "collections": [],
+    "counterexamples": [],
+    "system_settings": {
+      "variable": {
+        "format": {
+          "time": {
+            "pattern": "short"
+          },
+          "currency": {
+            "fraction_digits": 2
+          }
+        }
+      },
+      "off_topic": {
+        "enabled": true
+      },
+      "auto_learn": {
+        "apply": true
+      },
+      "topic_switch": {
+        "enabled": true,
+        "messages": {
+          "enable_confirmation": true,
+          "confirmation_failure": {
+            "generic": [
+              {
+                "values": [
+                  {
+                    "text_expression": {
+                      "concat": [
+                        {
+                          "scalar": "I'm sorry, I did not catch that, please confirm."
+                        }
+                      ]
+                    }
+                  }
+                ],
+                "response_type": "text",
+                "selection_policy": "sequential"
+              }
+            ]
+          },
+          "confirmation_request": {
+            "generic": [
+              {
+                "values": [
+                  {
+                    "text_expression": {
+                      "concat": [
+                        {
+                          "scalar": "Do you want to continue with the previous topic: "
+                        },
+                        {
+                          "system_variable": "digressed_from"
+                        },
+                        {
+                          "scalar": "?"
+                        }
+                      ]
+                    }
+                  }
+                ],
+                "response_type": "text",
+                "selection_policy": "sequential"
+              },
+              {
+                "options": [
+                  {
+                    "label": "Yes",
+                    "value": {
+                      "input": {
+                        "text": "Yes"
+                      }
+                    }
+                  },
+                  {
+                    "label": "No",
+                    "value": {
+                      "input": {
+                        "text": "No"
+                      }
+                    }
+                  }
+                ],
+                "response_type": "option",
+                "repeat_on_reprompt": true
+              }
+            ]
+          }
+        },
+        "max_tries": 3
+      },
+      "generative_ai": {
+        "slot_filling": {
+          "enabled": false
+        }
+      },
+      "disambiguation": {
+        "prompt": "Did you mean:",
+        "enabled": true,
+        "randomize": true,
+        "max_suggestions": 5,
+        "suggestion_text_policy": "title",
+        "none_of_the_above_prompt": "None of the above",
+        "use_connect_to_support_prompt": "Connect to support",
+        "single_answer_clarification_prompt": "Something else"
+      },
+      "spelling_auto_correct": true
+    },
+    "learning_opt_out": false,
+    "language": "en"
+  },
+  "description": "created for assistant 27e25a70-5cca-41a7-b7dc-7d8e0b3d28dd",
+  "dialog_settings": {
+    "source_assistant": "9ed9b4e2-7597-4e7a-b077-ead72865dd67"
+  },
+  "created": "2024-03-03T14:15:55.088Z",
+  "updated": "2024-03-03T14:15:55.088Z",
+  "snapshot": "1",
+  "assistant_id": "27e25a70-5cca-41a7-b7dc-7d8e0b3d28dd",
+  "assistant_references": [
+    {
+      "name": "ACHATBOT",
+      "assistant_id": "9ed9b4e2-7597-4e7a-b077-ead72865dd67",
+      "skill_reference": "actions skill"
+    }
+  ]
+}
